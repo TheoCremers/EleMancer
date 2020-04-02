@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://res/shaders/lightning.shader" type="Shader" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/effects/LightningEffect.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/seed = null
+
+[node name="LightningEffect" type="Sprite"]
+material = SubResource( 1 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )

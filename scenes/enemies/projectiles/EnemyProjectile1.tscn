@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/projectiles/EnemyProjectile.gd" type="Script" id=1]
+[ext_resource path="res://assets/projectiles/enemy_projectile1.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.0
+
+[node name="EnemyProjectile1" type="Area2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource( 1 )
+damage_amount = 10.0
+damage_type = "none"
+projectile_speed = 400.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 5.49 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/fffforward.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/DamageNumber.gd" type="Script" id=2]
+
+[node name="DamageNumber" type="Label"]
+margin_right = 48.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+script = ExtResource( 2 )
+
+[node name="VisibilityTween" type="Tween" parent="."]
+
+[node name="PositionTween" type="Tween" parent="."]
+[connection signal="tween_all_completed" from="VisibilityTween" to="." method="_on_VisibilityTween_tween_all_completed"]

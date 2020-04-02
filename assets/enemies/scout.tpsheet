@@ -1,0 +1,138 @@
+{
+	"textures": [
+		{
+			"image": "scout.png",
+			"size": {
+				"w": 408,
+				"h": 768
+			},
+			"sprites": [
+				{
+					"filename": "scout_enemy_sprite_0000.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 206,
+						"h": 182
+					},
+					"margin": {
+						"x": 18,
+						"y": 21,
+						"w": 33,
+						"h": 27
+					}
+				},
+				{
+					"filename": "scout_enemy_sprite_0005.png",
+					"region": {
+						"x": 209,
+						"y": 1,
+						"w": 198,
+						"h": 193
+					},
+					"margin": {
+						"x": 15,
+						"y": 14,
+						"w": 41,
+						"h": 16
+					}
+				},
+				{
+					"filename": "scout_enemy_sprite_0004.png",
+					"region": {
+						"x": 1,
+						"y": 185,
+						"w": 203,
+						"h": 198
+					},
+					"margin": {
+						"x": 13,
+						"y": 8,
+						"w": 36,
+						"h": 11
+					}
+				},
+				{
+					"filename": "scout_enemy_sprite_0003.png",
+					"region": {
+						"x": 206,
+						"y": 196,
+						"w": 201,
+						"h": 191
+					},
+					"margin": {
+						"x": 19,
+						"y": 11,
+						"w": 38,
+						"h": 18
+					}
+				},
+				{
+					"filename": "scout_enemy_sprite_0002.png",
+					"region": {
+						"x": 1,
+						"y": 385,
+						"w": 200,
+						"h": 191
+					},
+					"margin": {
+						"x": 24,
+						"y": 8,
+						"w": 39,
+						"h": 18
+					}
+				},
+				{
+					"filename": "scout_enemy_sprite_0007.png",
+					"region": {
+						"x": 1,
+						"y": 578,
+						"w": 199,
+						"h": 187
+					},
+					"margin": {
+						"x": 17,
+						"y": 19,
+						"w": 40,
+						"h": 22
+					}
+				},
+				{
+					"filename": "scout_enemy_sprite_0006.png",
+					"region": {
+						"x": 203,
+						"y": 389,
+						"w": 200,
+						"h": 191
+					},
+					"margin": {
+						"x": 12,
+						"y": 16,
+						"w": 39,
+						"h": 18
+					}
+				},
+				{
+					"filename": "scout_enemy_sprite_0001.png",
+					"region": {
+						"x": 202,
+						"y": 582,
+						"w": 199,
+						"h": 185
+					},
+					"margin": {
+						"x": 22,
+						"y": 15,
+						"w": 40,
+						"h": 24
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:f96544417d9ea85eeb76354947d9cb4c:ca2e47527d77fc1257870dbfeb2d81e2:a42db055bf4a4b7a79400d794d96d56f$"
+	}
+}

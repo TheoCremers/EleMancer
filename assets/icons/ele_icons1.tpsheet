@@ -1,0 +1,138 @@
+{
+	"textures": [
+		{
+			"image": "ele_icons1.png",
+			"size": {
+				"w": 107,
+				"h": 109
+			},
+			"sprites": [
+				{
+					"filename": "light1.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 38,
+						"h": 38
+					},
+					"margin": {
+						"x": 4,
+						"y": 5,
+						"w": 8,
+						"h": 8
+					}
+				},
+				{
+					"filename": "shock1.png",
+					"region": {
+						"x": 41,
+						"y": 1,
+						"w": 29,
+						"h": 44
+					},
+					"margin": {
+						"x": 9,
+						"y": 2,
+						"w": 17,
+						"h": 2
+					}
+				},
+				{
+					"filename": "earth1.png",
+					"region": {
+						"x": 1,
+						"y": 41,
+						"w": 36,
+						"h": 35
+					},
+					"margin": {
+						"x": 5,
+						"y": 6,
+						"w": 10,
+						"h": 11
+					}
+				},
+				{
+					"filename": "life1.png",
+					"region": {
+						"x": 1,
+						"y": 78,
+						"w": 37,
+						"h": 30
+					},
+					"margin": {
+						"x": 5,
+						"y": 11,
+						"w": 9,
+						"h": 16
+					}
+				},
+				{
+					"filename": "death1.png",
+					"region": {
+						"x": 72,
+						"y": 1,
+						"w": 34,
+						"h": 35
+					},
+					"margin": {
+						"x": 6,
+						"y": 6,
+						"w": 12,
+						"h": 11
+					}
+				},
+				{
+					"filename": "ice1.png",
+					"region": {
+						"x": 72,
+						"y": 38,
+						"w": 32,
+						"h": 33
+					},
+					"margin": {
+						"x": 7,
+						"y": 8,
+						"w": 14,
+						"h": 13
+					}
+				},
+				{
+					"filename": "fire1.png",
+					"region": {
+						"x": 40,
+						"y": 47,
+						"w": 27,
+						"h": 36
+					},
+					"margin": {
+						"x": 10,
+						"y": 5,
+						"w": 19,
+						"h": 10
+					}
+				},
+				{
+					"filename": "dark1.png",
+					"region": {
+						"x": 69,
+						"y": 73,
+						"w": 35,
+						"h": 33
+					},
+					"margin": {
+						"x": 5,
+						"y": 8,
+						"w": 11,
+						"h": 13
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b3cc89c0093c94ad50680d99d9c73079:e43f7188518830567b1f70bdacf5d4b1:c0e00da5708b2f4e6e52f212c8f1a390$"
+	}
+}

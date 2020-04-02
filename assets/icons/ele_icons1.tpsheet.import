@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/ele_icons1.tpsheet-c193bc63bc76cacd0bcd98c4e9c89a34.res"
+
+[deps]
+
+files=[ "res://assets/icons/ele_icons1.sprites/light1.tres", "res://assets/icons/ele_icons1.sprites/shock1.tres", "res://assets/icons/ele_icons1.sprites/earth1.tres", "res://assets/icons/ele_icons1.sprites/life1.tres", "res://assets/icons/ele_icons1.sprites/death1.tres", "res://assets/icons/ele_icons1.sprites/ice1.tres", "res://assets/icons/ele_icons1.sprites/fire1.tres", "res://assets/icons/ele_icons1.sprites/dark1.tres" ]
+
+source_file="res://assets/icons/ele_icons1.tpsheet"
+dest_files=[ "res://.import/ele_icons1.tpsheet-c193bc63bc76cacd0bcd98c4e9c89a34.res", "res://assets/icons/ele_icons1.sprites/light1.tres", "res://assets/icons/ele_icons1.sprites/shock1.tres", "res://assets/icons/ele_icons1.sprites/earth1.tres", "res://assets/icons/ele_icons1.sprites/life1.tres", "res://assets/icons/ele_icons1.sprites/death1.tres", "res://assets/icons/ele_icons1.sprites/ice1.tres", "res://assets/icons/ele_icons1.sprites/fire1.tres", "res://assets/icons/ele_icons1.sprites/dark1.tres" ]
+
+[params]
+

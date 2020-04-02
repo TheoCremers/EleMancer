@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/lost_soul.tpsheet-64a37cccd8ad748ca01c932f35cb5df4.res"
+
+[deps]
+
+files=[ "res://assets/enemies/lost_soul.sprites/idle/idle_0007.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0000.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0001.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0006.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0003.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0008.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0004.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0002.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0005.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0004.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0003.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0005.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0002.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0000.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0001.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0000.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0003.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0002.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0001.tres" ]
+
+source_file="res://assets/enemies/lost_soul.tpsheet"
+dest_files=[ "res://.import/lost_soul.tpsheet-64a37cccd8ad748ca01c932f35cb5df4.res", "res://assets/enemies/lost_soul.sprites/idle/idle_0007.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0000.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0001.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0006.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0003.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0008.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0004.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0002.tres", "res://assets/enemies/lost_soul.sprites/idle/idle_0005.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0004.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0003.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0005.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0002.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0000.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0001.tres", "res://assets/enemies/lost_soul.sprites/emerge/emerge_0000.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0003.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0002.tres", "res://assets/enemies/lost_soul.sprites/rip/rip_0001.tres" ]
+
+[params]
+

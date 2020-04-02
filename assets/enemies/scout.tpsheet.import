@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/scout.tpsheet-be028ac93aaff8dcb9eb79128b404415.res"
+
+[deps]
+
+files=[ "res://assets/enemies/scout.sprites/scout_enemy_sprite_0000.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0005.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0004.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0003.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0002.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0007.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0006.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0001.tres" ]
+
+source_file="res://assets/enemies/scout.tpsheet"
+dest_files=[ "res://.import/scout.tpsheet-be028ac93aaff8dcb9eb79128b404415.res", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0000.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0005.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0004.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0003.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0002.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0007.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0006.tres", "res://assets/enemies/scout.sprites/scout_enemy_sprite_0001.tres" ]
+
+[params]
+

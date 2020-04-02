@@ -1,0 +1,303 @@
+{
+	"textures": [
+		{
+			"image": "lost_soul.png",
+			"size": {
+				"w": 249,
+				"h": 554
+			},
+			"sprites": [
+				{
+					"filename": "idle/idle_0007.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 78,
+						"h": 113
+					},
+					"margin": {
+						"x": 6,
+						"y": 3,
+						"w": 22,
+						"h": 5
+					}
+				},
+				{
+					"filename": "idle/idle_0000.png",
+					"region": {
+						"x": 81,
+						"y": 1,
+						"w": 84,
+						"h": 104
+					},
+					"margin": {
+						"x": 10,
+						"y": 12,
+						"w": 16,
+						"h": 14
+					}
+				},
+				{
+					"filename": "idle/idle_0001.png",
+					"region": {
+						"x": 167,
+						"y": 1,
+						"w": 80,
+						"h": 107
+					},
+					"margin": {
+						"x": 13,
+						"y": 9,
+						"w": 20,
+						"h": 11
+					}
+				},
+				{
+					"filename": "idle/idle_0006.png",
+					"region": {
+						"x": 81,
+						"y": 107,
+						"w": 79,
+						"h": 108
+					},
+					"margin": {
+						"x": 6,
+						"y": 8,
+						"w": 21,
+						"h": 10
+					}
+				},
+				{
+					"filename": "idle/idle_0003.png",
+					"region": {
+						"x": 1,
+						"y": 116,
+						"w": 76,
+						"h": 112
+					},
+					"margin": {
+						"x": 17,
+						"y": 4,
+						"w": 24,
+						"h": 6
+					}
+				},
+				{
+					"filename": "idle/idle_0008.png",
+					"region": {
+						"x": 162,
+						"y": 110,
+						"w": 78,
+						"h": 106
+					},
+					"margin": {
+						"x": 7,
+						"y": 10,
+						"w": 22,
+						"h": 12
+					}
+				},
+				{
+					"filename": "idle/idle_0004.png",
+					"region": {
+						"x": 79,
+						"y": 217,
+						"w": 74,
+						"h": 111
+					},
+					"margin": {
+						"x": 15,
+						"y": 5,
+						"w": 26,
+						"h": 7
+					}
+				},
+				{
+					"filename": "idle/idle_0002.png",
+					"region": {
+						"x": 1,
+						"y": 230,
+						"w": 76,
+						"h": 108
+					},
+					"margin": {
+						"x": 17,
+						"y": 8,
+						"w": 24,
+						"h": 10
+					}
+				},
+				{
+					"filename": "idle/idle_0005.png",
+					"region": {
+						"x": 155,
+						"y": 218,
+						"w": 75,
+						"h": 108
+					},
+					"margin": {
+						"x": 11,
+						"y": 8,
+						"w": 25,
+						"h": 10
+					}
+				},
+				{
+					"filename": "emerge/emerge_0004.png",
+					"region": {
+						"x": 155,
+						"y": 328,
+						"w": 70,
+						"h": 113
+					},
+					"margin": {
+						"x": 14,
+						"y": 3,
+						"w": 30,
+						"h": 5
+					}
+				},
+				{
+					"filename": "emerge/emerge_0003.png",
+					"region": {
+						"x": 79,
+						"y": 330,
+						"w": 67,
+						"h": 115
+					},
+					"margin": {
+						"x": 17,
+						"y": 1,
+						"w": 33,
+						"h": 3
+					}
+				},
+				{
+					"filename": "emerge/emerge_0005.png",
+					"region": {
+						"x": 1,
+						"y": 340,
+						"w": 71,
+						"h": 108
+					},
+					"margin": {
+						"x": 13,
+						"y": 8,
+						"w": 29,
+						"h": 10
+					}
+				},
+				{
+					"filename": "emerge/emerge_0002.png",
+					"region": {
+						"x": 148,
+						"y": 443,
+						"w": 67,
+						"h": 110
+					},
+					"margin": {
+						"x": 17,
+						"y": 6,
+						"w": 33,
+						"h": 8
+					}
+				},
+				{
+					"filename": "rip/rip_0000.png",
+					"region": {
+						"x": 217,
+						"y": 443,
+						"w": 31,
+						"h": 14
+					},
+					"margin": {
+						"x": 32,
+						"y": 91,
+						"w": 69,
+						"h": 104
+					}
+				},
+				{
+					"filename": "emerge/emerge_0001.png",
+					"region": {
+						"x": 74,
+						"y": 447,
+						"w": 67,
+						"h": 68
+					},
+					"margin": {
+						"x": 17,
+						"y": 48,
+						"w": 33,
+						"h": 50
+					}
+				},
+				{
+					"filename": "emerge/emerge_0000.png",
+					"region": {
+						"x": 1,
+						"y": 450,
+						"w": 67,
+						"h": 44
+					},
+					"margin": {
+						"x": 17,
+						"y": 72,
+						"w": 33,
+						"h": 74
+					}
+				},
+				{
+					"filename": "rip/rip_0003.png",
+					"region": {
+						"x": 1,
+						"y": 496,
+						"w": 67,
+						"h": 36
+					},
+					"margin": {
+						"x": 17,
+						"y": 80,
+						"w": 33,
+						"h": 82
+					}
+				},
+				{
+					"filename": "rip/rip_0002.png",
+					"region": {
+						"x": 70,
+						"y": 517,
+						"w": 62,
+						"h": 35
+					},
+					"margin": {
+						"x": 19,
+						"y": 80,
+						"w": 38,
+						"h": 83
+					}
+				},
+				{
+					"filename": "rip/rip_0001.png",
+					"region": {
+						"x": 1,
+						"y": 534,
+						"w": 48,
+						"h": 18
+					},
+					"margin": {
+						"x": 27,
+						"y": 89,
+						"w": 52,
+						"h": 100
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:46266e8de54229d11c77041e772f541d:695297103c4721715ebe54b9d35231b3:3d0d21665a9b7b6e01e85f6603e2a131$"
+	}
+}

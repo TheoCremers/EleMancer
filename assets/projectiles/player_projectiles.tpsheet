@@ -1,0 +1,198 @@
+{
+	"textures": [
+		{
+			"image": "player_projectiles.png",
+			"size": {
+				"w": 382,
+				"h": 59
+			},
+			"sprites": [
+				{
+					"filename": "death1.png",
+					"region": {
+						"x": 2,
+						"y": 2,
+						"w": 26,
+						"h": 45
+					},
+					"margin": {
+						"x": 13,
+						"y": 6,
+						"w": 27,
+						"h": 11
+					}
+				},
+				{
+					"filename": "earth1.png",
+					"region": {
+						"x": 32,
+						"y": 2,
+						"w": 37,
+						"h": 43
+					},
+					"margin": {
+						"x": 8,
+						"y": 7,
+						"w": 16,
+						"h": 13
+					}
+				},
+				{
+					"filename": "fire/fire1_0000.png",
+					"region": {
+						"x": 73,
+						"y": 2,
+						"w": 32,
+						"h": 47
+					},
+					"margin": {
+						"x": 10,
+						"y": 5,
+						"w": 21,
+						"h": 9
+					}
+				},
+				{
+					"filename": "fire/fire1_0001.png",
+					"region": {
+						"x": 109,
+						"y": 2,
+						"w": 32,
+						"h": 52
+					},
+					"margin": {
+						"x": 10,
+						"y": 4,
+						"w": 21,
+						"h": 4
+					}
+				},
+				{
+					"filename": "fire/fire1_0002.png",
+					"region": {
+						"x": 145,
+						"y": 2,
+						"w": 32,
+						"h": 51
+					},
+					"margin": {
+						"x": 10,
+						"y": 5,
+						"w": 21,
+						"h": 5
+					}
+				},
+				{
+					"filename": "fire/fire1_0003.png",
+					"region": {
+						"x": 181,
+						"y": 2,
+						"w": 32,
+						"h": 47
+					},
+					"margin": {
+						"x": 10,
+						"y": 5,
+						"w": 21,
+						"h": 9
+					}
+				},
+				{
+					"filename": "ice1.png",
+					"region": {
+						"x": 217,
+						"y": 2,
+						"w": 20,
+						"h": 52
+					},
+					"margin": {
+						"x": 16,
+						"y": 2,
+						"w": 33,
+						"h": 4
+					}
+				},
+				{
+					"filename": "life/life1_0000.png",
+					"region": {
+						"x": 241,
+						"y": 2,
+						"w": 35,
+						"h": 44
+					},
+					"margin": {
+						"x": 9,
+						"y": 6,
+						"w": 18,
+						"h": 12
+					}
+				},
+				{
+					"filename": "life/life1_0002.png",
+					"region": {
+						"x": 241,
+						"y": 2,
+						"w": 35,
+						"h": 44
+					},
+					"margin": {
+						"x": 9,
+						"y": 6,
+						"w": 18,
+						"h": 12
+					}
+				},
+				{
+					"filename": "life/life1_0001.png",
+					"region": {
+						"x": 280,
+						"y": 2,
+						"w": 36,
+						"h": 42
+					},
+					"margin": {
+						"x": 8,
+						"y": 6,
+						"w": 17,
+						"h": 14
+					}
+				},
+				{
+					"filename": "life/life1_0003.png",
+					"region": {
+						"x": 320,
+						"y": 2,
+						"w": 33,
+						"h": 43
+					},
+					"margin": {
+						"x": 10,
+						"y": 6,
+						"w": 20,
+						"h": 13
+					}
+				},
+				{
+					"filename": "shock1.png",
+					"region": {
+						"x": 357,
+						"y": 2,
+						"w": 23,
+						"h": 55
+					},
+					"margin": {
+						"x": 15,
+						"y": 1,
+						"w": 30,
+						"h": 1
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b9fe0b70ef8578b7a8640a3910b51eec:e7c44260f4226a4fd6baa99d32d2bb8f:27aee20bbe6854bfb3e5adaa720cbeb6$"
+	}
+}

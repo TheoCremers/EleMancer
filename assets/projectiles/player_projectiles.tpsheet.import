@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/player_projectiles.tpsheet-6c7a73628fb9bf67b215bcd89792e9d0.res"
+
+[deps]
+
+files=[ "res://assets/projectiles/player_projectiles.sprites/death1.tres", "res://assets/projectiles/player_projectiles.sprites/earth1.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0000.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0001.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0002.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0003.tres", "res://assets/projectiles/player_projectiles.sprites/ice1.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0000.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0002.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0001.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0003.tres", "res://assets/projectiles/player_projectiles.sprites/shock1.tres" ]
+
+source_file="res://assets/projectiles/player_projectiles.tpsheet"
+dest_files=[ "res://.import/player_projectiles.tpsheet-6c7a73628fb9bf67b215bcd89792e9d0.res", "res://assets/projectiles/player_projectiles.sprites/death1.tres", "res://assets/projectiles/player_projectiles.sprites/earth1.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0000.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0001.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0002.tres", "res://assets/projectiles/player_projectiles.sprites/fire/fire1_0003.tres", "res://assets/projectiles/player_projectiles.sprites/ice1.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0000.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0002.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0001.tres", "res://assets/projectiles/player_projectiles.sprites/life/life1_0003.tres", "res://assets/projectiles/player_projectiles.sprites/shock1.tres" ]
+
+[params]
+
