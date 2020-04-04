@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/boss1_projectiles.tpsheet-2d69923a28c703b04f9a46370d266491.res"
+
+[deps]
+
+files=[ "res://assets/projectiles/boss1_projectiles.sprites/projectile3.tres", "res://assets/projectiles/boss1_projectiles.sprites/projectile2.tres", "res://assets/projectiles/boss1_projectiles.sprites/projectile1.tres" ]
+
+source_file="res://assets/projectiles/boss1_projectiles.tpsheet"
+dest_files=[ "res://.import/boss1_projectiles.tpsheet-2d69923a28c703b04f9a46370d266491.res", "res://assets/projectiles/boss1_projectiles.sprites/projectile3.tres", "res://assets/projectiles/boss1_projectiles.sprites/projectile2.tres", "res://assets/projectiles/boss1_projectiles.sprites/projectile1.tres" ]
+
+[params]
+

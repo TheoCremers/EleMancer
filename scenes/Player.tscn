@@ -5,11 +5,11 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 17.0
-height = 45.0
+height = 12.0182
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 13.0
-height = 45.0
+height = 13.7157
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 500, 500 )
@@ -22,7 +22,6 @@ scale = Vector2( 0.227799, 0.227799 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="InnerBody" type="Area2D" parent="."]

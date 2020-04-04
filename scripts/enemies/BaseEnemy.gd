@@ -7,7 +7,6 @@ var damageable = preload("res://scripts/Damageable.gd").new()
 export(float) var health = 100
 export(bool) var can_attack = false
 export(float) var attack_cd = 1.5
-var personal_time = 0.0
 var attack_timer
 var offscreen = true
 var offscreen_free_time = 3.0
@@ -38,7 +37,7 @@ func _process(delta):
 	_update(delta)
 
 func _update(delta):
-	personal_time += delta
+	pass
 	
 func attack_player():
 	var direction = (Game_manager.player.global_position - global_position).normalized()

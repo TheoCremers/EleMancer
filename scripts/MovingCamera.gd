@@ -1,6 +1,6 @@
 extends Camera2D
 
-var movespeed = 50
+export(float) var movespeed = 0
 var border_width = 20
 
 onready var border_bottom = $BorderBottom/CollisionShape2D

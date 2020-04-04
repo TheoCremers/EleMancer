@@ -7,7 +7,6 @@ var ChainLightning = preload("res://scenes/abilities/ChainLightning.tscn")
 var DeathGrasp = preload("res://scenes/abilities/DeathGrasp.tscn")
 
 var abilities
-var piercing = 0
 var orbiting = false
 var homing = false
 var homing_target

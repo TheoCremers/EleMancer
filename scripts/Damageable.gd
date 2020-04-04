@@ -12,16 +12,19 @@ var show_bar = false
 var weak_against = []
 var strong_against = []
 var immune_against = []
+var invulnerable = false
 
 func calculate_damage(amount, type):
-	var damage = amount
-	if type in weak_against:
-		damage *= 2
-	if type in strong_against:
-		damage *= 0.5
-	if type in immune_against:
-		damage = 0
-	return damage
+	if invulnerable: return 0
+	else:
+		var damage = amount
+		if type in weak_against:
+			damage *= 2
+		if type in strong_against:
+			damage *= 0.5
+		if type in immune_against:
+			damage = 0
+		return damage
 
 func show_damage(amount):
 	# show damage taken with damage_number instance
@@ -33,7 +36,8 @@ func show_damage(amount):
 func take_damage(amount, type):
 	var damage_taken = calculate_damage(amount, type)
 	health -= damage_taken
-	show_damage(damage_taken)
+	if damage_taken > 0:
+		show_damage(damage_taken)
 	
 	if health <= 0:
 		on_death()
@@ -45,7 +49,8 @@ func take_bulk_damage(damage_list):
 	for damage in damage_list:
 		damage_sum += calculate_damage(damage.amount, damage.type)
 	health -= damage_sum
-	show_damage(damage_sum)
+	if damage_sum > 0:
+		show_damage(damage_sum)
 	
 	if health <= 0:
 		on_death()
@@ -57,8 +62,5 @@ func on_death():
 	emit_signal("death_signal", self)
 	if get_parent().has_method("on_death"):
 		get_parent().on_death()
-		#yield(get_tree(), "idle_frame") # TODO confirm that this fixes the nulled reference bug
-		call_deferred('free')
 	else:
-		#yield(get_tree(), "idle_frame") # TODO confirm that this fixes the nulled reference bug
 		get_parent().call_deferred('free')

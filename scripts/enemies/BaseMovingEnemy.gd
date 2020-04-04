@@ -6,6 +6,7 @@ export(Vector2) var period = Vector2(4.0, 2.0)
 export(Vector2) var period_offset = Vector2(0.25, 0)
 export(Vector2) var linear_direction = Vector2(0, 1)
 
+var personal_time = 0.0
 var motion = Vector2()
 
 func _start():
@@ -23,3 +24,4 @@ func _physics_process(delta):
 		motion = movespeed * linear_direction
 	# move the enemy
 	motion = move_and_slide(motion)
+	personal_time += delta

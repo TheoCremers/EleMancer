@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy_projectile1.png-8ccf215cbb696f6fd4dfb38dd0079b26.stex"
+path="res://.import/boss1_projectiles.png-249404f3bb2f40ba896ac1b6edc0b236.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/projectiles/enemy_projectile1.png"
-dest_files=[ "res://.import/enemy_projectile1.png-8ccf215cbb696f6fd4dfb38dd0079b26.stex" ]
+source_file="res://assets/projectiles/boss1_projectiles.png"
+dest_files=[ "res://.import/boss1_projectiles.png-249404f3bb2f40ba896ac1b6edc0b236.stex" ]
 
 [params]
 
