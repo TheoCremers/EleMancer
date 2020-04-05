@@ -14,7 +14,11 @@
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Boss1" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 434.434, 227.015 )
+position = Vector2( 192, 224 )
+
+[node name="Boss2" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 512, 224 )
+scale = Vector2( -1, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 352, 736 )

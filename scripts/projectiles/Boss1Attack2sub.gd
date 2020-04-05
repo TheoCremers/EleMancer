@@ -8,7 +8,7 @@ func _start():
 	$Timer.set_wait_time(0.8)
 	$Timer.start()
 	._start()
-	$Tween.interpolate_property(self, "velocity", Vector2.ZERO, direction * max_speed, 4.0, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$Tween.interpolate_property(self, "velocity", Vector2.ZERO, direction * max_speed, 3.0, Tween.TRANS_CUBIC, Tween.EASE_IN)
 	$Tween.start()
 
 func spawn_secondary():

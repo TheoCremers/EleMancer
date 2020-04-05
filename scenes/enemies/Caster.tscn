@@ -26,6 +26,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="AOE" type="Area2D" parent="."]
+collision_layer = 0
 script = ExtResource( 3 )
 damage_touch = 50.0
 

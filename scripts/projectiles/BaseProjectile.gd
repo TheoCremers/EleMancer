@@ -1,8 +1,8 @@
 extends Area2D
 
 var damage_list = []
-var piercing = 0
-var max_speed = 600
+export(int) var piercing = 0
+export(float) var max_speed = 600
 var direction = Vector2.DOWN
 var velocity = Vector2.ZERO
 var offset = Vector2.ZERO

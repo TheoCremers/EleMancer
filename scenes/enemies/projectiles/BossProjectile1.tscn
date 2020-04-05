@@ -9,9 +9,9 @@
 collision_layer = 16
 collision_mask = 3
 script = ExtResource( 1 )
+max_speed = 400.0
 damage_amount = 20.0
 damage_type = "none"
-projectile_speed = 350.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
