@@ -35,16 +35,17 @@ func _ready():
 	spawn_timer.start(spawn_time)
 
 func _process(delta):
-	var phase_offset = phase_start
-	var direction = Vector2.ZERO
-	for projectile in projectiles:
-		if projectile:
-			direction.x = sin(2 * PI * (personal_time / period) + phase_offset)
-			direction.y = cos(2 * PI * (personal_time / period) + phase_offset)
-			projectile.direction = direction
-			#projectile.rotation = -direction.angle_to(Vector2.UP)
-			projectile.position = Game_manager.get_player().position + radius * Vector2(- direction.y, direction.x)
-		phase_offset += phase_spacing
+	if not Game_manager.player_dead:
+		var phase_offset = phase_start
+		var direction = Vector2.ZERO
+		for projectile in projectiles:
+			if projectile:
+				direction.x = sin(2 * PI * (personal_time / period) + phase_offset)
+				direction.y = cos(2 * PI * (personal_time / period) + phase_offset)
+				projectile.direction = direction
+				#projectile.rotation = -direction.angle_to(Vector2.UP)
+				projectile.position = Game_manager.player.position + radius * Vector2(- direction.y, direction.x)
+			phase_offset += phase_spacing
 	
 	personal_time += delta
 

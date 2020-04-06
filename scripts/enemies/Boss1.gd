@@ -8,6 +8,7 @@ var projectile3 = preload("res://scenes/enemies/projectiles/Boss1Laser.tscn")
 onready var hitbox = $CollisionShape2D
 onready var AOEbox = $"AOE/CollisionShape2D"
 onready var cast_point = $CastPoint.global_position
+onready var animation = $AnimationPlayer
 onready var tween = $Tween
 
 var max_health = 1000
@@ -24,10 +25,11 @@ var attack3_interval_frames = 3
 
 var attack4_cd = 4.5
 var attack4_delay = 0.5
+var attack4_instance
 
 var attack_timer
 var attack_timer_sub
-var phase = 0
+var phase = 3
 var blue_val = 1.0
 var in_phase_transition = true
 
@@ -43,15 +45,15 @@ func _ready():
 	for i in range(0, attack1_arcs.size()):
 		attack1_arcs[i] = attack1_arcs[i] / 180.0 * PI
 	attack3_spacing *= PI / 180.0
+	# make sprite shader unique to this instance
+	$Sprite.set_material( $Sprite.get_material().duplicate() )
 
 func _process(delta):
 	pass
 
 func spawn_effect():
-	# TODO spawn animation/effect
-	tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 3.0, Tween.TRANS_SINE, Tween.EASE_IN)
-	tween.start()
-	yield(tween, "tween_completed")
+	animation.play("Spawn")
+	yield(animation, "animation_finished")
 	# enable hitboxes
 	hitbox.set_deferred("disabled", false)
 	AOEbox.set_deferred("disabled", false)
@@ -94,9 +96,9 @@ func attack3():
 
 func attack4():
 	if not Game_manager.player_dead:
-		var new_projectile = projectile3.instance()
-		new_projectile.position = cast_point
-		Game_manager.projectiles.add_child(new_projectile)
+		attack4_instance = projectile3.instance()
+		attack4_instance.position = cast_point
+		Game_manager.projectiles.add_child(attack4_instance)
 
 func fan_attack(shots:int, arc:float):
 	# get player direction from cast point
@@ -135,6 +137,7 @@ func enter_next_phase():
 		attack2()
 	elif phase == 2:
 		attack_timer.disconnect("timeout", self, "attack2")
+		attack_timer.stop()
 		attack3()
 	elif phase == 3:
 		attack_timer.set_wait_time(attack4_cd)
@@ -168,5 +171,20 @@ func on_death():
 	if phase < 4: # 4 is the final phase
 		phase_transition()
 	else:
-		# make a more elaborate death animation
-		call_deferred("free")
+		on_real_death()
+
+func on_real_death():
+	# start in first phase
+	in_phase_transition = false
+	# stop laser attack
+	attack_timer.disconnect("timeout", self, "attack4")
+	attack_timer.stop()
+	attack4_instance.call_deferred("free")
+	# disable hitboxes
+	hitbox.set_deferred("disabled", true)
+	AOEbox.set_deferred("disabled", true)
+	# despawn animation
+	animation.play_backwards("Spawn")
+	yield(animation, "animation_finished")
+	# free boss instance
+	call_deferred("free")

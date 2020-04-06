@@ -3,8 +3,9 @@ extends Reference
 const ProjectileProperties = preload("res://scripts/Models/ProjectileProperties.gd")
 const OrbitingSystem = preload("res://scenes/abilities/OrbitingSystem.tscn")
 
-var elements = [{"type" : "fire", "level" : 2},
-				{"type" : "life", "level" : 1}]
+var elements = [{"type" : "death", "level" : 2},
+				{"type" : "life", "level" : 1},
+				{"type" : "earth", "level" : 1}]
 
 var max_level = 0
 var primary_element

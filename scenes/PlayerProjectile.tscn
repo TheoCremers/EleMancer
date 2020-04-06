@@ -7,9 +7,9 @@
 [ext_resource path="res://assets/projectiles/player/fire/fire1_0001.png" type="Texture" id=5]
 [ext_resource path="res://assets/projectiles/player/fire/fire1_0002.png" type="Texture" id=6]
 [ext_resource path="res://assets/projectiles/player/fire/fire1_0003.png" type="Texture" id=7]
-[ext_resource path="res://assets/projectiles/player/shock1.png" type="Texture" id=8]
-[ext_resource path="res://assets/projectiles/player/ice1.png" type="Texture" id=9]
-[ext_resource path="res://assets/projectiles/player/death1.png" type="Texture" id=10]
+[ext_resource path="res://assets/projectiles/player/death1.png" type="Texture" id=8]
+[ext_resource path="res://assets/projectiles/player/shock1.png" type="Texture" id=9]
+[ext_resource path="res://assets/projectiles/player/ice1.png" type="Texture" id=10]
 [ext_resource path="res://assets/projectiles/player/life/life1_0001.png" type="Texture" id=11]
 [ext_resource path="res://assets/projectiles/player/life/life1_0002.png" type="Texture" id=12]
 [ext_resource path="res://assets/projectiles/player/life/life1_0003.png" type="Texture" id=13]
@@ -34,17 +34,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": false,
-"name": "shock",
+"name": "death",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
-"name": "ice",
+"name": "shock",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": false,
-"name": "death",
+"name": "ice",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ) ],
@@ -65,6 +65,7 @@ script = ExtResource( 1 )
 material = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "fire"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

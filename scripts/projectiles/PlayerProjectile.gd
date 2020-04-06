@@ -14,6 +14,7 @@ var homing_timer
 var homing_accel = 100
 var rotate = false
 var rotate_speed
+var animated_sprite
 
 func init(properties):
 	self.damage_list = properties.damage_list
@@ -52,8 +53,11 @@ func _update(delta):
 		._update(delta)
 
 func set_graphics():
+	animated_sprite = $AnimatedSprite
+	# Make shader unique
+	animated_sprite.set_material( animated_sprite.get_material().duplicate() )
 	# change sprite to match primary element
-	$AnimatedSprite.animation = abilities[0].type
+	animated_sprite.animation = abilities[0].type
 	# add outline shaders for secondary and tertiary elements
 	var color1
 	var color2
@@ -65,8 +69,8 @@ func set_graphics():
 		color2 = Constants.element_colors[abilities[2].type]
 	else:
 		color2 = color1
-	$AnimatedSprite.material.set_shader_param("color1", color1)
-	$AnimatedSprite.material.set_shader_param("color2", color2)
+	animated_sprite.material.set_shader_param("color1", color1)
+	animated_sprite.material.set_shader_param("color2", color2)
 	# change size of projectile based on level
 	scale = Vector2.ONE *(1 + abilities[0].level * 0.1)
 
