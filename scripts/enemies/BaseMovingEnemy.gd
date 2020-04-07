@@ -15,13 +15,14 @@ func _start():
 	._start()
 
 func _physics_process(delta):
-	if movement_type == 1:
-		# circular movement
-		motion.x = movespeed * sin((personal_time / period.x + period_offset.x) * 2 * PI)
-		motion.y = movespeed * cos((personal_time / period.y + period_offset.y) * 2 * PI)
-	elif movement_type == 2:
-		# linear movement
-		motion = movespeed * linear_direction
-	# move the enemy
-	motion = move_and_slide(motion)
-	personal_time += delta
+	if active:
+		if movement_type == 1:
+			# circular movement
+			motion.x = movespeed * sin((personal_time / period.x + period_offset.x) * 2 * PI)
+			motion.y = movespeed * cos((personal_time / period.y + period_offset.y) * 2 * PI)
+		elif movement_type == 2:
+			# linear movement
+			motion = movespeed * linear_direction
+		# move the enemy
+		motion = move_and_slide(motion)
+		personal_time += delta

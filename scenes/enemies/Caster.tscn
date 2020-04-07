@@ -1,38 +1,54 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/enemies/Caster.gd" type="Script" id=1]
-[ext_resource path="res://assets/enemies/caster_enemy/still.png" type="Texture" id=2]
-[ext_resource path="res://scripts/AOE.gd" type="Script" id=3]
+[ext_resource path="res://scenes/animation/SpawnAnim.tscn" type="PackedScene" id=2]
+[ext_resource path="res://res/materials/Boss1material.tres" type="Material" id=3]
+[ext_resource path="res://assets/enemies/caster_enemy/still.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "PreSpawn"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/transition_time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( -0.31864 ),
+"update": 0,
+"values": [ -1.0 ]
+}
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 30.9249
 height = 90.8016
 
 [node name="Caster" type="KinematicBody2D"]
-collision_layer = 8
+collision_layer = 4096
 collision_mask = 2
 script = ExtResource( 1 )
 health = 1000.0
+damage_touch = 30.0
 can_attack = true
 attack_cd = 0.3
 
+[node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
+anims/PreSpawn = SubResource( 2 )
+
 [node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 3 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 offset = Vector2( 50, -80 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 1 )
 
-[node name="AOE" type="Area2D" parent="."]
-collision_layer = 0
-script = ExtResource( 3 )
-damage_touch = 50.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AOE"]
-visible = false
-shape = SubResource( 1 )
-
 [node name="CastPoint" type="Node2D" parent="."]
 position = Vector2( -43.4873, -152.521 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

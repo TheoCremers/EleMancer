@@ -29,7 +29,7 @@ var attack4_instance
 
 var attack_timer
 var attack_timer_sub
-var phase = 3
+var phase = 0
 var blue_val = 1.0
 var in_phase_transition = true
 
@@ -55,6 +55,7 @@ func spawn_effect():
 	animation.play("Spawn")
 	yield(animation, "animation_finished")
 	# enable hitboxes
+	damageable.invulnerable = false
 	hitbox.set_deferred("disabled", false)
 	AOEbox.set_deferred("disabled", false)
 	# start in first phase
@@ -149,9 +150,8 @@ func enter_next_phase():
 
 func phase_transition():
 	in_phase_transition = true
-	# disable hitboxes
-	hitbox.set_deferred("disabled", true)
-	AOEbox.set_deferred("disabled", true)
+	# cannot be damaged during transition
+	damageable.invulnerable = true
 	# stop attack timer
 	attack_timer.stop()
 	# regain health
@@ -161,21 +161,22 @@ func phase_transition():
 	blue_val -= 0.33
 	tween.start()
 	yield(tween, "tween_completed")
-	# enable hitboxes
-	hitbox.set_deferred("disabled", false)
-	AOEbox.set_deferred("disabled", false)
+	# enable damage
+	damageable.invulnerable = false
 	in_phase_transition = false
 	enter_next_phase()
 
 func on_death():
-	if phase < 4: # 4 is the final phase
-		phase_transition()
-	else:
-		on_real_death()
+	if not in_phase_transition:
+		if phase < 4: # 4 is the final phase
+			phase_transition()
+		else:
+			on_real_death()
 
 func on_real_death():
 	# start in first phase
-	in_phase_transition = false
+	in_phase_transition = true
+	damageable.invulnerable = true
 	# stop laser attack
 	attack_timer.disconnect("timeout", self, "attack4")
 	attack_timer.stop()

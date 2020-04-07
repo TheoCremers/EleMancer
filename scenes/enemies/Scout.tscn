@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/enemies/BaseMovingEnemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemies/scout.sprites/scout_enemy_sprite_0000.tres" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/enemies/scout.sprites/scout_enemy_sprite_0006.tres" type="Texture" id=8]
 [ext_resource path="res://assets/enemies/scout.sprites/scout_enemy_sprite_0007.tres" type="Texture" id=9]
 [ext_resource path="res://res/shapes/Scout_shape.tres" type="Shape2D" id=10]
-[ext_resource path="res://scripts/AOE.gd" type="Script" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -36,14 +35,4 @@ frames = SubResource( 1 )
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = ExtResource( 10 )
-
-[node name="AOE" type="Area2D" parent="."]
-collision_layer = 0
-script = ExtResource( 11 )
-damage_touch = 25.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AOE"]
-visible = false
 shape = ExtResource( 10 )
