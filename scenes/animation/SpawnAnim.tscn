@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Spawn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/transition_time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( -0.31864, 1 ),
+"update": 0,
+"values": [ -1.0, 1.0 ]
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+root_node = NodePath("../Sprite")
+anims/Spawn = SubResource( 1 )

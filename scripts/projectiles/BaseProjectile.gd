@@ -1,7 +1,8 @@
 extends Area2D
 
 var damage_list = []
-var max_speed = 600
+export(int) var piercing = 0
+export(float) var max_speed = 600
 var direction = Vector2.DOWN
 var velocity = Vector2.ZERO
 var offset = Vector2.ZERO
@@ -28,4 +29,9 @@ func _on_Area2D_body_entered(body):
 	# something was hit, check if it can be damaged
 	if "damageable" in body:
 		body.damageable.take_bulk_damage(damage_list)
-	call_deferred('free')
+		if piercing > 0:
+			piercing -= 1
+		else:
+			call_deferred('free')
+	else:
+		call_deferred('free')

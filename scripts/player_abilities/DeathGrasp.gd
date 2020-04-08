@@ -100,6 +100,8 @@ func _on_death(damageable):
 		new_projectile.init(level)
 		new_projectile.position = global_position
 		Game_manager.projectiles.call_deferred("add_child", new_projectile)
+	# remove this effect
+	call_deferred("free")
 
 func _on_duration_timer():
 	stacks = 0

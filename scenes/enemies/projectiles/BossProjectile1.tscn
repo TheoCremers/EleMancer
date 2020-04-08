@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/projectiles/EnemyProjectile.gd" type="Script" id=1]
+[ext_resource path="res://assets/projectiles/boss1_projectiles.sprites/projectile1.tres" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="EnemyProjectile1" type="Area2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource( 1 )
+max_speed = 400.0
+damage_amount = 20.0
+damage_type = "none"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )

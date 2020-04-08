@@ -1,0 +1,108 @@
+{
+	"textures": [
+		{
+			"image": "rock.png",
+			"size": {
+				"w": 846,
+				"h": 182
+			},
+			"sprites": [
+				{
+					"filename": "rock_0000.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 134,
+						"h": 180
+					},
+					"margin": {
+						"x": 15,
+						"y": 0,
+						"w": 31,
+						"h": 8
+					}
+				},
+				{
+					"filename": "rock_0001.png",
+					"region": {
+						"x": 137,
+						"y": 1,
+						"w": 134,
+						"h": 180
+					},
+					"margin": {
+						"x": 15,
+						"y": 0,
+						"w": 31,
+						"h": 8
+					}
+				},
+				{
+					"filename": "rock_0002.png",
+					"region": {
+						"x": 273,
+						"y": 1,
+						"w": 134,
+						"h": 180
+					},
+					"margin": {
+						"x": 15,
+						"y": 0,
+						"w": 31,
+						"h": 8
+					}
+				},
+				{
+					"filename": "rock_0003.png",
+					"region": {
+						"x": 409,
+						"y": 1,
+						"w": 134,
+						"h": 180
+					},
+					"margin": {
+						"x": 15,
+						"y": 0,
+						"w": 31,
+						"h": 8
+					}
+				},
+				{
+					"filename": "rock_0004.png",
+					"region": {
+						"x": 545,
+						"y": 1,
+						"w": 134,
+						"h": 180
+					},
+					"margin": {
+						"x": 15,
+						"y": 0,
+						"w": 31,
+						"h": 8
+					}
+				},
+				{
+					"filename": "rock_0005.png",
+					"region": {
+						"x": 681,
+						"y": 1,
+						"w": 164,
+						"h": 77
+					},
+					"margin": {
+						"x": 0,
+						"y": 108,
+						"w": 1,
+						"h": 111
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:6d4481cc92a9e8d1b4794916613c80f2:aacf9930192934d9add130b82576d3eb:5ad403a0f03ed50004881344a6c71c78$"
+	}
+}

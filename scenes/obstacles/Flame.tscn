@@ -1,12 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/AOE.gd" type="Script" id=1]
-[ext_resource path="res://assets/flame.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://res/shaders/fire.shader" type="Shader" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 25.0
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/transparent = Color( 0, 0, 0, 0 )
+shader_param/inner = Color( 1, 0.701961, 0, 1 )
+shader_param/outer = Color( 1, 0.235294, 0, 1 )
+shader_param/inner_threshold = 0.4
+shader_param/outer_threshold = 0.15
+shader_param/soft_edge = 0.04
+shader_param/center = Vector2( 0.5, 0.8 )
+shader_param/OCTAVES = 6
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 18.1793
 
 [node name="Flame" type="Area2D"]
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 0
 collision_mask = 9
 script = ExtResource( 1 )
@@ -17,9 +30,9 @@ damage_interval = 0.2
 damage_type = "fire"
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
 position = Vector2( 0, -10 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 1 )
+shape = SubResource( 2 )

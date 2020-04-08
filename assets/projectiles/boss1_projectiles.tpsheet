@@ -1,0 +1,63 @@
+{
+	"textures": [
+		{
+			"image": "boss1_projectiles.png",
+			"size": {
+				"w": 120,
+				"h": 173
+			},
+			"sprites": [
+				{
+					"filename": "projectile3.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 118,
+						"h": 106
+					},
+					"margin": {
+						"x": 0,
+						"y": 3,
+						"w": 4,
+						"h": 3
+					}
+				},
+				{
+					"filename": "projectile2.png",
+					"region": {
+						"x": 1,
+						"y": 109,
+						"w": 60,
+						"h": 63
+					},
+					"margin": {
+						"x": 4,
+						"y": 3,
+						"w": 8,
+						"h": 9
+					}
+				},
+				{
+					"filename": "projectile1.png",
+					"region": {
+						"x": 63,
+						"y": 109,
+						"w": 30,
+						"h": 53
+					},
+					"margin": {
+						"x": 5,
+						"y": 6,
+						"w": 9,
+						"h": 9
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:c164f71a64cfa27cd84a5bfc3016f8d9:cc2a9ac056535a0466a6ac5720495f66:d2c2dda7934ba85557833703e7145dd3$"
+	}
+}

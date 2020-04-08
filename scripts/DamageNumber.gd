@@ -12,6 +12,5 @@ func _ready():
 	0.0, 1, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	$VisibilityTween.start()
 
-
 func _on_VisibilityTween_tween_all_completed():
 	call_deferred('free')

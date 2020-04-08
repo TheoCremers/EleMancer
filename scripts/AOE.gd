@@ -37,3 +37,4 @@ func _remove_damageable(damageable):
 	if not i < 0:
 		damageables_overlapping.remove(i)
 		prev_hurt_time.remove(i)
+
