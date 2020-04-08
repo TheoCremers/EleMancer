@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/enemies/LostSoul.tscn" type="PackedScene" id=1]
+
+[node name="LevelBlock1" type="Node2D"]
+
+[node name="LostSoul" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 672 )
+
+[node name="LostSoul2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 640 )
+
+[node name="LostSoul3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 608 )
+
+[node name="LostSoul4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 576 )
+
+[node name="LostSoul5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 448, 544 )
+
+[node name="LostSoul6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, 512 )
+
+[node name="LostSoul7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 480 )
+
+[node name="LostSoul8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 512 )
+
+[node name="LostSoul9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 704 )
+
+[node name="LostSoul10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 320, 800 )
+
+[node name="LostSoul19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 224 )
+
+[node name="LostSoul20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 128 )
+
+[node name="LostSoul21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 128 )
+
+[node name="LostSoul22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 32 )
+
+[node name="LostSoul23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 320 )
+
+[node name="LostSoul24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 416 )
+
+[node name="LostSoul25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 608 )
+
+[node name="LostSoul26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 704 )
+
+[node name="LostSoul11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 416 )
+
+[node name="LostSoul12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 288 )
+
+[node name="LostSoul13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 256 )
+
+[node name="LostSoul14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 448, 224 )
+
+[node name="LostSoul15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, 192 )
+
+[node name="LostSoul16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 160 )
+
+[node name="LostSoul17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 320 )
+
+[node name="LostSoul18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 352 )

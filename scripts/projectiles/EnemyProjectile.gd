@@ -6,4 +6,3 @@ export(String) var damage_type
 func _start():
 	damage_list.append({"amount" : damage_amount, "type": damage_type})
 	._start()
-	

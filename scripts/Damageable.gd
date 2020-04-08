@@ -7,7 +7,7 @@ onready var UI = $"/root/World/UI"
 const damage_number = preload("res://scenes/effects/DamageNumber.tscn")
 
 var health
-var dead = false
+var organic = true
 var show_bar = false
 var weak_against = []
 var strong_against = []
@@ -59,8 +59,11 @@ func take_bulk_damage(damage_list):
 
 func on_death():
 	# emit death signal for AOE to remove this body from their lists
-	emit_signal("death_signal", self)
 	if get_parent().has_method("on_death"):
-		get_parent().on_death()
+		var dead = get_parent().on_death()
+		if dead:
+			emit_signal("death_signal", self)
 	else:
+		yield(get_tree(), "idle_frame")
 		get_parent().call_deferred('free')
+		emit_signal("death_signal", self)

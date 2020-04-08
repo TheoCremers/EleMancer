@@ -3,7 +3,6 @@ extends "res://scripts/projectiles/BaseProjectile.gd"
 var level
 var homing_target = false
 var homing_accel = 100
-var has_damaged = false
 
 func init(level):
 	self.level = level
@@ -36,11 +35,13 @@ func set_nearest_target():
 	var sq_distance = 0
 	homing_target = false
 	for target in targets:
-		# find nearest target
-		sq_distance = (target.global_position - global_position).length_squared()
-		if sq_distance < min_sq_distance:
-			min_sq_distance = sq_distance
-			homing_target = target
+		# check if target is alive
+		if target.damageable.health > 0:
+			# find nearest target
+			sq_distance = (target.global_position - global_position).length_squared()
+			if sq_distance < min_sq_distance:
+				min_sq_distance = sq_distance
+				homing_target = target
 		
 	if homing_target:
 		homing_target.damageable.connect("death_signal", self, "lose_homing_target")
@@ -54,16 +55,18 @@ func accel_target_direction():
 func _on_Area2D_body_entered(body):
 	# something was hit, check if it can be damaged
 	if "damageable" in body:
-		has_damaged = true
 		homing_target = false
 		var alive = body.damageable.take_bulk_damage(damage_list)
-		fade_out()
+		if alive:
+			fade_out()
+		else:
+			yield(get_tree(), "idle_frame")
+			set_nearest_target()
 
 func lose_homing_target(damageable):
 	homing_target = false
-	if not has_damaged:
-		yield(get_tree().create_timer(.1), "timeout") # wait a bit
-		set_nearest_target()
+	yield(get_tree().create_timer(.1), "timeout") # wait a bit
+	set_nearest_target()
 
 func fade_out():
 	$CollisionShape2D.call_deferred("disabled", true)

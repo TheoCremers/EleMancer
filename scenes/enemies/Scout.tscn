@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scripts/enemies/BaseMovingEnemy.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemies/Scout.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemies/scout.sprites/scout_enemy_sprite_0000.tres" type="Texture" id=2]
 [ext_resource path="res://assets/enemies/scout.sprites/scout_enemy_sprite_0001.tres" type="Texture" id=3]
 [ext_resource path="res://assets/enemies/scout.sprites/scout_enemy_sprite_0002.tres" type="Texture" id=4]
@@ -20,14 +20,12 @@ animations = [ {
 } ]
 
 [node name="Scout" type="KinematicBody2D"]
-collision_layer = 8
+collision_layer = 4096
 collision_mask = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-health = 50.0
-can_attack = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )

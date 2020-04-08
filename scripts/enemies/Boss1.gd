@@ -10,6 +10,7 @@ onready var AOEbox = $"AOE/CollisionShape2D"
 onready var cast_point = $CastPoint.global_position
 onready var animation = $AnimationPlayer
 onready var tween = $Tween
+onready var sprite = $Sprite
 
 var max_health = 1000
 
@@ -102,16 +103,17 @@ func attack4():
 		Game_manager.projectiles.add_child(attack4_instance)
 
 func fan_attack(shots:int, arc:float):
-	# get player direction from cast point
-	var direction = (Game_manager.get_player().global_position - cast_point).normalized()
-	# converts arc from degrees to radians
-	var arc_segment = arc / float(shots - 1)
-	# create shots that form a fan within a defined arc
-	for i in range(0, shots):
-		var new_projectile = projectile1.instance()
-		new_projectile.position = cast_point
-		new_projectile.direction = direction.rotated(arc * 0.5 - arc_segment * i)
-		Game_manager.projectiles.add_child(new_projectile)
+	if not Game_manager.player_dead:
+		# get player direction from cast point
+		var direction = (Game_manager.player.global_position - cast_point).normalized()
+		# converts arc from degrees to radians
+		var arc_segment = arc / float(shots - 1)
+		# create shots that form a fan within a defined arc
+		for i in range(0, shots):
+			var new_projectile = projectile1.instance()
+			new_projectile.position = cast_point
+			new_projectile.direction = direction.rotated(arc * 0.5 - arc_segment * i)
+			Game_manager.projectiles.add_child(new_projectile)
 
 func create_timers():
 	# prepare main attack timer
@@ -170,8 +172,10 @@ func on_death():
 	if not in_phase_transition:
 		if phase < 4: # 4 is the final phase
 			phase_transition()
+			return false
 		else:
 			on_real_death()
+			return true
 
 func on_real_death():
 	# start in first phase

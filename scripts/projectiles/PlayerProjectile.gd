@@ -131,15 +131,17 @@ func add_chain_lightning(level, body):
 	Game_manager.abilities.call_deferred("add_child", new_object)
 
 func add_death_grasp(level, body):
-	# check if already has deathgrasp object
-	if body.has_node("DeathGrasp"):
-		var death_grasp = body.get_node("DeathGrasp")
-		death_grasp.check_level(level)
-		death_grasp.add_stacks(1)
-	else:
-		var new_object = DeathGrasp.instance()
-		new_object.level = level
-		body.call_deferred("add_child", new_object)
+	# check if it can be affected by curse
+	if body.damageable.organic:
+		# check if already has deathgrasp object
+		if body.has_node("DeathGrasp"):
+			var death_grasp = body.get_node("DeathGrasp")
+			death_grasp.check_level(level)
+			death_grasp.add_stacks(1)
+		else:
+			var new_object = DeathGrasp.instance()
+			new_object.level = level
+			body.call_deferred("add_child", new_object)
 
 func on_exit_screen():
 	if not orbiting:
@@ -154,9 +156,9 @@ func _on_Area2D_body_entered(body):
 		for ability in abilities:
 			if ability.type == "fire":
 				add_fire_explosion(ability.level)
-			elif ability.type == "shock" and alive:
+			elif ability.type == "shock":
 				add_chain_lightning(ability.level, body)
-			elif ability.type == "death" and alive:
+			elif ability.type == "death":
 				add_death_grasp(ability.level, body)
 		
 		if piercing <= 0:

@@ -13,7 +13,7 @@ var offscreen = true
 var offscreen_free_time = 3.0
 var offscreen_timer
 var active = false
-var first = false
+var first = true
 var damage_box
 
 func _ready():
@@ -27,11 +27,15 @@ func _create_damage_box():
 	damage_box.set_script(load("res://scripts/AOE.gd"))
 	damage_box.damage_touch = damage_touch
 	var damage_collision = CollisionShape2D.new()
-	damage_collision.shape = $CollisionShape2D.shape # use the same shape as collision shape
+	# use the same shape and position + rotation as collision shape
+	damage_collision.shape = $CollisionShape2D.shape 
+	damage_collision.position = $CollisionShape2D.position
+	damage_collision.rotation = $CollisionShape2D.rotation
 	add_child(damage_box)
 	damage_box.add_child(damage_collision)
 
 func _start():
+	set_collision_state(false)
 	add_child(damageable)
 	damageable.health = health
 	damageable.invulnerable = true
@@ -64,31 +68,39 @@ func attack_player():
 	Game_manager.moving_camera.add_child(new_projectile)
 
 func on_enter_screen():
-	if not first:
+	if first:
 		_on_first_enter_screen()
-	first = true
+	else:
+		offscreen_timer.stop()
+	first = false
 	add_to_group(Group.OnscreenEnemy)
 	offscreen = false
-	offscreen_timer.stop()
 	if can_attack:
 		attack_timer.start()
 
 func _on_first_enter_screen():
 	active = true
 	damageable.invulnerable = false
-	set_collision_layer_bit(3, true) # allow for player projectile collision
-	damage_box.set_collision_mask_bit(0, true) # check for player collision
+	set_collision_state(true)
+
 
 func on_exit_screen():
+	print("enemy_func")
 	remove_from_group(Group.OnscreenEnemy)
 	offscreen = true
-	offscreen_timer.start()
-	if can_attack:
-		attack_timer.stop()
+	if damageable.health > 0:
+		offscreen_timer.start()
+		if can_attack:
+			attack_timer.stop()
 
 func _on_attack_timer():
 	if active and not Game_manager.player_dead:
 		attack_player()
 		
 func _on_offscreen_too_long():
+	print("too_long")
 	call_deferred("free")
+
+func set_collision_state(state):
+	set_collision_layer_bit(3, state) # projectile collision
+	damage_box.set_collision_mask_bit(0, state) # player touch damage

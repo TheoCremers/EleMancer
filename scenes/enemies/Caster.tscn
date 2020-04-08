@@ -5,7 +5,7 @@
 [ext_resource path="res://res/materials/Boss1material.tres" type="Material" id=3]
 [ext_resource path="res://assets/enemies/caster_enemy/still.png" type="Texture" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 resource_name = "PreSpawn"
 length = 0.001
 tracks/0/type = "value"
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ -1.0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 30.9249
 height = 90.8016
 
@@ -32,23 +32,24 @@ script = ExtResource( 1 )
 health = 1000.0
 damage_touch = 30.0
 can_attack = true
-attack_cd = 0.3
+attack_cd = 0.5
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
-anims/PreSpawn = SubResource( 2 )
+anims/PreSpawn = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )
+position = Vector2( 4.19116, 58.0126 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 offset = Vector2( 50, -80 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 1 )
+position = Vector2( 0, 57.4789 )
+shape = SubResource( 2 )
 
 [node name="CastPoint" type="Node2D" parent="."]
-position = Vector2( -43.4873, -152.521 )
+position = Vector2( -39.8949, -93.8447 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

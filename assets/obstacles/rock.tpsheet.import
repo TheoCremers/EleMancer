@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/rock.tpsheet-23a951539ef3759f67575f05baf3e9be.res"
+
+[deps]
+
+files=[ "res://assets/obstacles/rock.sprites/rock_0000.tres", "res://assets/obstacles/rock.sprites/rock_0001.tres", "res://assets/obstacles/rock.sprites/rock_0002.tres", "res://assets/obstacles/rock.sprites/rock_0003.tres", "res://assets/obstacles/rock.sprites/rock_0004.tres", "res://assets/obstacles/rock.sprites/rock_0005.tres" ]
+
+source_file="res://assets/obstacles/rock.tpsheet"
+dest_files=[ "res://.import/rock.tpsheet-23a951539ef3759f67575f05baf3e9be.res", "res://assets/obstacles/rock.sprites/rock_0000.tres", "res://assets/obstacles/rock.sprites/rock_0001.tres", "res://assets/obstacles/rock.sprites/rock_0002.tres", "res://assets/obstacles/rock.sprites/rock_0003.tres", "res://assets/obstacles/rock.sprites/rock_0004.tres", "res://assets/obstacles/rock.sprites/rock_0005.tres" ]
+
+[params]
+

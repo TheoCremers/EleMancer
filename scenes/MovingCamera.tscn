@@ -24,7 +24,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
-visible = false
 shape = SubResource( 1 )
 
 [node name="BorderTop" type="StaticBody2D" parent="."]
@@ -36,7 +35,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop"]
-visible = false
 shape = SubResource( 1 )
 
 [node name="BorderLeft" type="StaticBody2D" parent="."]
@@ -48,7 +46,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
-visible = false
 shape = SubResource( 2 )
 
 [node name="BorderRight" type="StaticBody2D" parent="."]
@@ -60,12 +57,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
-visible = false
 shape = SubResource( 2 )
 
 [node name="Screen" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4108
+collision_mask = 4116
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen"]
 visible = false

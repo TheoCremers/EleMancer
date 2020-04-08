@@ -11,7 +11,6 @@ var motion = Vector2()
 
 func _start():
 	linear_direction = linear_direction.normalized()
-	$AnimatedSprite.playing = true
 	._start()
 
 func _physics_process(delta):

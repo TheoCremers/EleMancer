@@ -14,8 +14,14 @@
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Caster" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 352, 320 )
-can_attack = false
+position = Vector2( 128, 192 )
+
+[node name="Caster3" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 352, 224 )
+
+[node name="Caster2" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 576, 192 )
+scale = Vector2( -1, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 352, 768 )
