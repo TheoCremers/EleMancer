@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/enemies/pentapus_sprite.png" type="Texture" id=1]
+[ext_resource path="res://scripts/enemies/Pentapus.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 35.5768
+height = 76.8638
+
+[node name="Pentapus" type="KinematicBody2D"]
+position = Vector2( -0.418121, 0 )
+collision_layer = 4096
+collision_mask = 2
+script = ExtResource( 2 )
+health = 600.0
+damage_touch = 30.0
+can_attack = true
+attack_cd = 2.0
+movement_type = 1
+period = Vector2( 4, 4 )
+period_offset = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 80 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 35 )
+shape = SubResource( 1 )
+
+[node name="CastPoint1" type="Node2D" parent="."]
+position = Vector2( 74.479, 7.06706 )
+
+[node name="CastPoint2" type="Node2D" parent="."]
+position = Vector2( 96.6324, 92.6866 )
+
+[node name="CastPoint3" type="Node2D" parent="."]
+position = Vector2( 0.23555, 131.006 )
+
+[node name="CastPoint4" type="Node2D" parent="."]
+position = Vector2( -93.7663, 101.069 )
+
+[node name="CastPoint5" type="Node2D" parent="."]
+position = Vector2( -80.5941, 18.4431 )

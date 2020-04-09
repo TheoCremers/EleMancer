@@ -85,7 +85,6 @@ func _on_first_enter_screen():
 
 
 func on_exit_screen():
-	print("enemy_func")
 	remove_from_group(Group.OnscreenEnemy)
 	offscreen = true
 	if damageable.health > 0:
@@ -98,7 +97,6 @@ func _on_attack_timer():
 		attack_player()
 		
 func _on_offscreen_too_long():
-	print("too_long")
 	call_deferred("free")
 
 func set_collision_state(state):

@@ -45,7 +45,6 @@ func _on_Screen_body_exited(body):
 	if body.has_method("on_exit_screen"):
 		body.on_exit_screen()
 	else:
-		print("destroy_func")
 		yield(get_tree().create_timer(1.0), "timeout")
 		body.call_deferred("free")
 
