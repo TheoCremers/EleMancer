@@ -5,7 +5,7 @@
 [ext_resource path="res://res/materials/Boss1material.tres" type="Material" id=3]
 [ext_resource path="res://assets/enemies/caster_enemy/still.png" type="Texture" id=4]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "PreSpawn"
 length = 0.001
 tracks/0/type = "value"
@@ -35,7 +35,7 @@ can_attack = true
 attack_cd = 0.5
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
-anims/PreSpawn = SubResource( 3 )
+anims/PreSpawn = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )

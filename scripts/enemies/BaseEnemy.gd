@@ -52,7 +52,6 @@ func _start():
 		attack_timer.one_shot = false
 		attack_timer.connect("timeout", self, "_on_attack_timer")
 		add_child(attack_timer)
-		attack_timer.start()
 
 func _process(delta):
 	_update(delta)
@@ -61,11 +60,11 @@ func _update(delta):
 	pass
 	
 func attack_player():
-	var direction = (Game_manager.player.global_position - global_position).normalized()
+	var direction = (GameManager.player.global_position - global_position).normalized()
 	var new_projectile = projectile.instance()
-	new_projectile.position = position - Game_manager.moving_camera.position
+	new_projectile.position = position - GameManager.camera.position
 	new_projectile.direction = direction
-	Game_manager.moving_camera.add_child(new_projectile)
+	GameManager.camera.add_child(new_projectile)
 
 func on_enter_screen():
 	if first:
@@ -85,15 +84,20 @@ func _on_first_enter_screen():
 
 
 func on_exit_screen():
-	remove_from_group(Group.OnscreenEnemy)
+	#remove_from_group(Group.OnscreenEnemy)
 	offscreen = true
 	if damageable.health > 0:
 		offscreen_timer.start()
 		if can_attack:
 			attack_timer.stop()
 
+func on_death():
+	remove_from_group(Group.OnscreenEnemy)
+	call_deferred("free")
+	return true
+
 func _on_attack_timer():
-	if active and not Game_manager.player_dead:
+	if active and not GameManager.player_dead:
 		attack_player()
 		
 func _on_offscreen_too_long():

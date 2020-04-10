@@ -15,8 +15,8 @@ script = ExtResource( 2 )
 health = 600.0
 damage_touch = 30.0
 can_attack = true
-attack_cd = 2.0
 movement_type = 1
+move_wait = false
 period = Vector2( 4, 4 )
 period_offset = Vector2( 0.75, 0.75 )
 

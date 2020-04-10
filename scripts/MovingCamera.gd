@@ -23,9 +23,9 @@ func _ready():
 	
 
 func _process(delta):
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		# move player and camera
-		Game_manager.player.move_and_slide(Vector2.UP * movespeed)
+		GameManager.player.move_and_slide(Vector2.UP * movespeed)
 		position.y -= movespeed * delta
 
 

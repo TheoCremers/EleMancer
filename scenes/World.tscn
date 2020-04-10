@@ -1,16 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/enemies/LostSoul.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/enemies/Scout.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/enemies/Caster.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/LevelManager.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/MovingCamera.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/obstacles/Flame.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/obstacles/Block.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/enemies/Angler.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/enemies/Pentapus.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/enemies/ArrowShell.tscn" type="PackedScene" id=11]
 
 [node name="World" type="Node2D"]
 __meta__ = {
@@ -19,106 +12,11 @@ __meta__ = {
 
 [node name="UI" parent="." instance=ExtResource( 1 )]
 
-[node name="Obstacles" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Flame" parent="Obstacles" instance=ExtResource( 7 )]
-position = Vector2( 608, -832 )
-
-[node name="Flame2" parent="Obstacles" instance=ExtResource( 7 )]
-position = Vector2( 544, -896 )
-
-[node name="Flame3" parent="Obstacles" instance=ExtResource( 7 )]
-position = Vector2( 96, -832 )
-
-[node name="Flame4" parent="Obstacles" instance=ExtResource( 7 )]
-position = Vector2( 160, -896 )
-
-[node name="Block" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 128, 384 )
-
-[node name="Block2" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 544, 384 )
-
-[node name="Block3" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 352, 288 )
-
-[node name="Block4" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 96, -1184 )
-
-[node name="Block6" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 448, -1184 )
-
-[node name="Block7" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 608, -1184 )
-
-[node name="Block5" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 256, -1184 )
-
-[node name="Enemies" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="LostSoul11" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 288, -576 )
-
-[node name="LostSoul9" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 384, -544 )
-
-[node name="LostSoul7" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 480, -512 )
-
-[node name="LostSoul8" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 576, -480 )
-
-[node name="LostSoul12" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 192, -608 )
-
-[node name="LostSoul10" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 96, -640 )
-
-[node name="Scout" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 352, -864 )
-movement_type = 1
-
-[node name="Scout2" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 64, -352 )
-health = 500.0
-movement_type = 2
-movespeed = 100.0
-period = Vector2( 2, 2 )
-period_offset = Vector2( 0, 0 )
-linear_direction = Vector2( 1, 1 )
-
-[node name="Caster" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 160, -1472 )
-
-[node name="Caster2" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 576, -1472 )
-
-[node name="Angler" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 704, -96 )
-
-[node name="Angler2" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 0, 96 )
-scale = Vector2( -1, 1 )
-linear_direction = Vector2( 1, 0 )
-
-[node name="Pentapus" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 352, -2016 )
-
-[node name="ArrowShell" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 320, -256 )
-
-[node name="ArrowShell2" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 544, -256 )
+[node name="LevelManager" type="Node2D" parent="."]
+script = ExtResource( 2 )
 
 [node name="MovingCamera" parent="." instance=ExtResource( 6 )]
 position = Vector2( 351, 448 )
-current = true
 editor_draw_limits = true
 movespeed = 50.0
 

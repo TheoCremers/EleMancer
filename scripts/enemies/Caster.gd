@@ -22,13 +22,12 @@ func on_death():
 	$AnimationPlayer.play_backwards("Spawn")
 	active = false
 	yield($AnimationPlayer, "animation_finished")
-	call_deferred("free")
-	return true
+	.on_death()
 
 func attack_player():
-	var direction = (Game_manager.player.global_position - $CastPoint.global_position).normalized()
+	var direction = (GameManager.player.global_position - $CastPoint.global_position).normalized()
 	direction = direction.rotated(rng.randf_range(-accuracy, accuracy))
 	var new_projectile = projectile.instance()
-	new_projectile.position = $CastPoint.global_position - Game_manager.moving_camera.position
+	new_projectile.position = $CastPoint.global_position - GameManager.camera.position
 	new_projectile.direction = direction
-	Game_manager.moving_camera.add_child(new_projectile)
+	GameManager.camera.add_child(new_projectile)

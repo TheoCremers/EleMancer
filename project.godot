@@ -21,14 +21,15 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Game_manager="*res://scripts/autoloads/Game_manager.gd"
+GameManager="*res://scripts/autoloads/GameManager.gd"
 Group="*res://scripts/autoloads/Group.gd"
 Constants="*res://scripts/autoloads/Constants.gd"
+AssetManager="*res://scripts/autoloads/AssetManager.gd"
 
 [display]
 
-window/size/width=700
-window/size/height=900
+window/size/width=704
+window/size/height=896
 window/size/resizable=false
 window/handheld/orientation="portrait"
 

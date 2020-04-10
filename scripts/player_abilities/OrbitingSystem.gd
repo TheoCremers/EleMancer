@@ -35,7 +35,7 @@ func _ready():
 	spawn_timer.start(spawn_time)
 
 func _process(delta):
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		var phase_offset = phase_start
 		var direction = Vector2.ZERO
 		for projectile in projectiles:
@@ -44,7 +44,7 @@ func _process(delta):
 				direction.y = cos(2 * PI * (personal_time / period) + phase_offset)
 				projectile.direction = direction
 				#projectile.rotation = -direction.angle_to(Vector2.UP)
-				projectile.position = Game_manager.player.position + radius * Vector2(- direction.y, direction.x)
+				projectile.position = GameManager.player.position + radius * Vector2(- direction.y, direction.x)
 			phase_offset += phase_spacing
 	
 	personal_time += delta
@@ -54,7 +54,7 @@ func create(i):
 	new_projectile.init(projectile_property)
 	new_projectile.orbiting = true
 	new_projectile.connect("stop_orbiting", self, "_on_projectile_left") # to remove reference in projectiles array
-	Game_manager.projectiles.add_child(new_projectile)
+	GameManager.projectiles.add_child(new_projectile)
 	projectiles[i] = new_projectile
 
 func _on_spawn():

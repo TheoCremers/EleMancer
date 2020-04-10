@@ -14,4 +14,4 @@ func spawn_secondary():
 	var new_projectile = secondary.instance()
 	new_projectile.position = position
 	new_projectile.direction = direction
-	Game_manager.projectiles.add_child(new_projectile)
+	GameManager.projectiles.add_child(new_projectile)

@@ -45,7 +45,7 @@ func basic_attack():
 		var new_projectile = projectile.instance()
 		new_projectile.init(projectile_property)
 		new_projectile.position = global_position
-		Game_manager.projectiles.add_child(new_projectile)
+		GameManager.projectiles.add_child(new_projectile)
 		$AttackTimer.start()
 
 
@@ -56,6 +56,9 @@ func _on_inner_body_entered(body):
 
 func debug_report():
 	# show position, speed and delta
-	debug_info.text = str("X: ", position.x, "\nY: ", position.y)
+	debug_info.text = str("FPS: ", Performance.get_monitor(Performance.TIME_FPS))
+	debug_info.text = debug_info.text + str("\nX: ", position.x, "\nY: ", position.y)
 	debug_info.text = debug_info.text + str("\nVX: ", motion.x, "\nVY: ", motion.y)
 	debug_info.text = debug_info.text + str("\ncrushed: ", crushed)
+	debug_info.text = debug_info.text + str("\n#enemies: ", get_tree().get_nodes_in_group(Group.OnscreenEnemy).size())
+	

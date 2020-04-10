@@ -27,11 +27,6 @@ animations = [ {
 "name": "earth",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": false,
-"name": "death",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
 "name": "shock",
@@ -46,6 +41,11 @@ animations = [ {
 "loop": true,
 "name": "fire",
 "speed": 24.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "death",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ) ],
 "loop": true,

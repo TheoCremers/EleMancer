@@ -51,6 +51,6 @@ void fragment() {
 
 [resource]
 shader = SubResource( 1 )
-shader_param/transition_time = 1.0
+shader_param/transition_time = -1.0
 shader_param/transition_border = 0.5
 shader_param/color = Color( 0.0392157, 0.141176, 0.360784, 1 )

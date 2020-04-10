@@ -99,7 +99,7 @@ func _on_death(damageable):
 		var new_projectile = load("res://scenes/abilities/Reaper.tscn").instance()
 		new_projectile.init(level)
 		new_projectile.position = global_position
-		Game_manager.projectiles.call_deferred("add_child", new_projectile)
+		GameManager.projectiles.call_deferred("add_child", new_projectile)
 	# remove this effect
 	call_deferred("free")
 

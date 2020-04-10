@@ -29,14 +29,14 @@ animations = [ {
 "name": "Idle",
 "speed": 12.0
 }, {
-"frames": [ null, ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": false,
-"name": "Rip",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": false,
 "name": "Emerge",
+"speed": 12.0
+}, {
+"frames": [ null, ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "Rip",
 "speed": 12.0
 } ]
 
@@ -44,7 +44,7 @@ animations = [ {
 collision_layer = 4096
 collision_mask = 2
 script = ExtResource( 1 )
-health = 50.0
+health = 150.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 32 )
