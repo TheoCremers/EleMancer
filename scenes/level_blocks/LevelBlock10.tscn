@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/obstacles/Flame.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://scenes/enemies/Scout.tscn" type="PackedScene" id=3]
+
+[node name="LevelBlock" type="Node2D"]
+script = ExtResource( 2 )
+block_id = 10
+base_difficulty = 2.0
+length = 224.0
+
+[node name="Flame" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 96 )
+
+[node name="Flame2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 96 )
+
+[node name="Flame3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 160 )
+
+[node name="Flame4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 160 )
+
+[node name="Scout" parent="." instance=ExtResource( 3 )]
+position = Vector2( 352, 32 )
+move_wait = false
+period_offset = Vector2( 0.25, 0.25 )
+
+[node name="Scout2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 192, 32 )
+move_wait = false
+period = Vector2( 2, 2 )
+
+[node name="Scout3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 32 )
+move_wait = false
+period = Vector2( 2, 2 )
+period_offset = Vector2( 0.25, 0.5 )

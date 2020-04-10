@@ -16,7 +16,6 @@ __meta__ = {
 }
 health = 500.0
 can_attack = true
-attack_cd = 1.5
 movement_type = 2
 movespeed = 50.0
 linear_direction = Vector2( -1, 0 )

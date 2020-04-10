@@ -14,9 +14,9 @@ func _ready(): # called after AOE ready
 	
 func _process(delta):
 	# track player with line until timer expires
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		if following:
-			var to_player = Game_manager.player.global_position - global_position
+			var to_player = GameManager.player.global_position - global_position
 			rotation = to_player.angle()
 			target_line.points[1] = Vector2.RIGHT * to_player.length()
 

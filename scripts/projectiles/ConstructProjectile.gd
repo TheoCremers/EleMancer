@@ -3,7 +3,8 @@ extends Reference
 const ProjectileProperties = preload("res://scripts/Models/ProjectileProperties.gd")
 const OrbitingSystem = preload("res://scenes/abilities/OrbitingSystem.tscn")
 
-var elements = [{"type" : "death", "level" : 4},
+var elements = [{"type" : "death", "level" : 2},
+				{"type" : "ice", "level" : 4},
 				{"type" : "life", "level" : 2}]
 
 var max_level = 0
@@ -119,7 +120,7 @@ func prepare_properties(projectile_element, primary:bool = true):
 		if projectile_element == "earth":
 			var new_orbiting_system = OrbitingSystem.instance()
 			new_orbiting_system.init(new_properties, projectiles[i].level)
-			Game_manager.get_player().add_child(new_orbiting_system)
+			GameManager.get_player().add_child(new_orbiting_system)
 
 func is_nonprimary_earth():
 	if primary_element == "earth":

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/enemies/ArrowShell.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/LevelBlock.gd" type="Script" id=2]
+
+[node name="LevelBlock" type="Node2D"]
+script = ExtResource( 2 )
+block_id = 3
+can_mirror = true
+base_difficulty = 2.0
+length = 192.0
+
+[node name="ArrowShell" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, -192 )
+
+[node name="ArrowShell2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, -160 )
+
+[node name="ArrowShell3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, -128 )
+
+[node name="ArrowShell4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, -96 )
+
+[node name="ArrowShell5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 448, -64 )
+
+[node name="ArrowShell6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, -32 )
+
+[node name="ArrowShell7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 0 )

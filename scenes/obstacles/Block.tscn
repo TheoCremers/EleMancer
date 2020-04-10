@@ -16,8 +16,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 25.0594 )
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( -32, -32, -30, 24, 4, 32, 32, 22, 32, -22, -2, -50 )
 
 [node name="Block" type="StaticBody2D"]
 collision_layer = 4098

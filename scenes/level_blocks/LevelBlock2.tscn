@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/enemies/ArrowShell.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/LevelBlock.gd" type="Script" id=2]
+
+[node name="LevelBlock" type="Node2D"]
+script = ExtResource( 2 )
+block_id = 2
+base_difficulty = 2.0
+length = 256.0
+
+[node name="ArrowShell" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, -256 )
+rotation = 0.349066
+
+[node name="ArrowShell2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, -192 )
+rotation = 0.436332
+
+[node name="ArrowShell3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, -128 )
+rotation = 0.523599
+
+[node name="ArrowShell4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, -64 )
+rotation = 0.610865
+
+[node name="ArrowShell5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, -3.05176e-05 )
+rotation = 0.698132
+
+[node name="ArrowShell6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, 64 )
+rotation = 0.785398
+
+[node name="ArrowShell7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, -288 )
+rotation = -0.349066
+
+[node name="ArrowShell8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -224 )
+rotation = -0.436332
+
+[node name="ArrowShell9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -160 )
+rotation = -0.523599
+
+[node name="ArrowShell10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -96 )
+rotation = -0.610865
+
+[node name="ArrowShell11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -32 )
+rotation = -0.698132
+
+[node name="ArrowShell12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 32 )
+rotation = -0.785398

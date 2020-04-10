@@ -95,7 +95,6 @@ func set_homing_target(body):
 		homing = true
 		# disable homing area for now
 		$"HomingArea/CollisionShape2D".set_deferred("disabled", true)
-		#$"HomingArea".disconnect("body_entered", self, "set_homing_target")
 		# stop orbiting
 		if orbiting:
 			orbiting = false
@@ -121,14 +120,16 @@ func add_fire_explosion(level):
 	var new_object = FireExplosion.instance()
 	new_object.position = global_position
 	new_object.level = level
-	Game_manager.abilities.call_deferred("add_child", new_object)
+	GameManager.abilities.call_deferred("add_child", new_object)
 
 func add_chain_lightning(level, body):
-	var new_object = ChainLightning.instance()
-	#new_object.position = global_position
-	new_object.level = level
-	new_object.target_body = body
-	Game_manager.abilities.call_deferred("add_child", new_object)
+	# check if target is conducting
+	if body.damageable.organic:
+		var new_object = ChainLightning.instance()
+		#new_object.position = global_position
+		new_object.level = level
+		new_object.target_body = body
+		GameManager.abilities.call_deferred("add_child", new_object)
 
 func add_death_grasp(level, body):
 	# check if it can be affected by curse
@@ -179,8 +180,11 @@ func remove_projectile():
 func lose_homing_target(damageable = null):
 	homing = false
 	homing_target = null
-	homing_timer.start()
+	# do not get a new homing target until no longer overlapping any bodies
+	while self.get_overlapping_bodies():
+		yield(self, "body_exited")
+		yield(get_tree(), "idle_frame") # need extra frame here to update overlapping bodies
+	enable_homing_area()
 	
 func enable_homing_area():
 	$"HomingArea/CollisionShape2D".set_deferred("disabled", false)
-	#$"HomingArea".connect("body_entered", self, "set_homing_target")

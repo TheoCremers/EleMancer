@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/enemies/Boss1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/animation/SpawnAnim.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/enemies/boss1/boss_sprite.png" type="Texture" id=3]
 [ext_resource path="res://res/shapes/Boss1_shape.tres" type="Shape2D" id=4]
-[ext_resource path="res://scripts/AOE.gd" type="Script" id=5]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -62,9 +61,11 @@ shader_param/transition_border = 0.5
 shader_param/color = Color( 0.0392157, 0.141176, 0.360784, 1 )
 
 [node name="Boss1" type="KinematicBody2D"]
-collision_layer = 8
+collision_layer = 4096
 collision_mask = 2
 script = ExtResource( 1 )
+health = 1000.0
+damage_touch = 50.0
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 
@@ -82,13 +83,3 @@ shape = ExtResource( 4 )
 
 [node name="CastPoint" type="Node2D" parent="."]
 position = Vector2( -140.099, 102.901 )
-
-[node name="AOE" type="Area2D" parent="."]
-position = Vector2( -22.0992, -22.0992 )
-collision_layer = 0
-script = ExtResource( 5 )
-damage_touch = 50.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AOE"]
-position = Vector2( -32, 128 )
-shape = ExtResource( 4 )

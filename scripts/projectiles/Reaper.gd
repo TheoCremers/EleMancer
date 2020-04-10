@@ -49,6 +49,7 @@ func set_nearest_target():
 		fade_out()
 
 func accel_target_direction():
+	# TODO fix homing when target is gone
 	var acceleration = (homing_target.global_position - global_position).normalized() * homing_accel
 	velocity = (velocity + acceleration).clamped(max_speed)
 

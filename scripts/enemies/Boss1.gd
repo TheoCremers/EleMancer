@@ -1,6 +1,5 @@
-extends KinematicBody2D
+extends "res://scripts/enemies/BaseEnemy.gd"
 
-var damageable = preload("res://scripts/Damageable.gd").new()
 var projectile1 = preload("res://scenes/enemies/projectiles/BossProjectile1.tscn")
 var projectile2 = preload("res://scenes/enemies/projectiles/Boss1Attack2.tscn")
 var projectile3 = preload("res://scenes/enemies/projectiles/Boss1Laser.tscn")
@@ -11,8 +10,6 @@ onready var cast_point = $CastPoint.global_position
 onready var animation = $AnimationPlayer
 onready var tween = $Tween
 onready var sprite = $Sprite
-
-var max_health = 1000
 
 var attack1_cd = 3.0
 var attack1_interval = 0.7
@@ -28,44 +25,36 @@ var attack4_cd = 4.5
 var attack4_delay = 0.5
 var attack4_instance
 
-var attack_timer
+var attack_timer_main
 var attack_timer_sub
 var phase = 0
 var blue_val = 1.0
 var in_phase_transition = true
 
-func _ready():
-	add_child(damageable)
-	damageable.health = max_health
-	# disable hitboxes
-	hitbox.set_deferred("disabled", true)
-	AOEbox.set_deferred("disabled", true)
-	# spawn boss
-	spawn_effect()
+func _start():
+	._start()
+	create_timers()
 	# calculate degrees to radians
 	for i in range(0, attack1_arcs.size()):
 		attack1_arcs[i] = attack1_arcs[i] / 180.0 * PI
 	attack3_spacing *= PI / 180.0
 	# make sprite shader unique to this instance
 	$Sprite.set_material( $Sprite.get_material().duplicate() )
+	$AnimationPlayer.play("PreSpawn")
 
-func _process(delta):
-	pass
-
-func spawn_effect():
+func _on_first_enter_screen():
+	attack_timer_sub.start(6)
+	yield(attack_timer_sub, "timeout")
 	animation.play("Spawn")
 	yield(animation, "animation_finished")
 	# enable hitboxes
-	damageable.invulnerable = false
-	hitbox.set_deferred("disabled", false)
-	AOEbox.set_deferred("disabled", false)
+	._on_first_enter_screen()
 	# start in first phase
 	in_phase_transition = false
-	create_timers()
 	enter_next_phase()
 
 func attack1():
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		# shoot 3 fans of decreasing arc towards player
 		for arc in attack1_arcs:
 			# TODO: gun_glow?
@@ -75,15 +64,15 @@ func attack1():
 			fan_attack(attack1_shots, arc)
 
 func attack2():
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		# shoot an attack that splits off into multiple projectiles
 		var new_projectile = projectile2.instance()
 		new_projectile.position = cast_point
 		new_projectile.direction = Vector2.DOWN
-		Game_manager.projectiles.add_child(new_projectile)
+		GameManager.projectiles.add_child(new_projectile)
 
 func attack3():
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		var direction = Vector2.UP
 		while not in_phase_transition:
 			# skip desired number of frames
@@ -94,18 +83,18 @@ func attack3():
 			direction = direction.rotated(attack3_spacing)
 			new_projectile.direction = direction
 			new_projectile.max_speed = 250
-			Game_manager.projectiles.add_child(new_projectile)
+			GameManager.projectiles.add_child(new_projectile)
 
 func attack4():
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		attack4_instance = projectile3.instance()
 		attack4_instance.position = cast_point
-		Game_manager.projectiles.add_child(attack4_instance)
+		GameManager.projectiles.add_child(attack4_instance)
 
 func fan_attack(shots:int, arc:float):
-	if not Game_manager.player_dead:
+	if not GameManager.player_dead:
 		# get player direction from cast point
-		var direction = (Game_manager.player.global_position - cast_point).normalized()
+		var direction = (GameManager.player.global_position - cast_point).normalized()
 		# converts arc from degrees to radians
 		var arc_segment = arc / float(shots - 1)
 		# create shots that form a fan within a defined arc
@@ -113,13 +102,13 @@ func fan_attack(shots:int, arc:float):
 			var new_projectile = projectile1.instance()
 			new_projectile.position = cast_point
 			new_projectile.direction = direction.rotated(arc * 0.5 - arc_segment * i)
-			Game_manager.projectiles.add_child(new_projectile)
+			GameManager.projectiles.add_child(new_projectile)
 
 func create_timers():
 	# prepare main attack timer
-	attack_timer = Timer.new()
-	attack_timer.one_shot = false
-	add_child(attack_timer)
+	attack_timer_main = Timer.new()
+	attack_timer_main.one_shot = false
+	add_child(attack_timer_main)
 	# prepare sub attack timer
 	attack_timer_sub = Timer.new()
 	attack_timer_sub.one_shot = true
@@ -127,25 +116,25 @@ func create_timers():
 
 func enter_next_phase():
 	if phase == 0:
-		attack_timer.set_wait_time(attack1_cd)
-		attack_timer.connect("timeout", self, "attack1")
-		attack_timer.start()
+		attack_timer_main.set_wait_time(attack1_cd)
+		attack_timer_main.connect("timeout", self, "attack1")
+		attack_timer_main.start()
 		attack_timer_sub.set_wait_time(attack1_interval)
 		attack1()
 	elif phase == 1:
-		attack_timer.set_wait_time(attack2_cd)
-		attack_timer.disconnect("timeout", self, "attack1")
-		attack_timer.connect("timeout", self, "attack2")
-		attack_timer.start()
+		attack_timer_main.set_wait_time(attack2_cd)
+		attack_timer_main.disconnect("timeout", self, "attack1")
+		attack_timer_main.connect("timeout", self, "attack2")
+		attack_timer_main.start()
 		attack2()
 	elif phase == 2:
-		attack_timer.disconnect("timeout", self, "attack2")
-		attack_timer.stop()
+		attack_timer_main.disconnect("timeout", self, "attack2")
+		attack_timer_main.stop()
 		attack3()
 	elif phase == 3:
-		attack_timer.set_wait_time(attack4_cd)
-		attack_timer.connect("timeout", self, "attack4")
-		attack_timer.start()
+		attack_timer_main.set_wait_time(attack4_cd)
+		attack_timer_main.connect("timeout", self, "attack4")
+		attack_timer_main.start()
 		attack4()
 	# set current phase
 	phase += 1
@@ -155,9 +144,9 @@ func phase_transition():
 	# cannot be damaged during transition
 	damageable.invulnerable = true
 	# stop attack timer
-	attack_timer.stop()
+	attack_timer_main.stop()
 	# regain health
-	damageable.health = max_health
+	damageable.health = health
 	# flash green
 	tween.interpolate_property(self, "modulate:b", blue_val, blue_val - 0.33, 3.0, Tween.TRANS_SINE, Tween.EASE_IN)
 	blue_val -= 0.33
@@ -178,18 +167,16 @@ func on_death():
 			return true
 
 func on_real_death():
-	# start in first phase
 	in_phase_transition = true
 	damageable.invulnerable = true
 	# stop laser attack
-	attack_timer.disconnect("timeout", self, "attack4")
-	attack_timer.stop()
+	attack_timer_main.disconnect("timeout", self, "attack4")
+	attack_timer_main.stop()
 	attack4_instance.call_deferred("free")
 	# disable hitboxes
-	hitbox.set_deferred("disabled", true)
-	AOEbox.set_deferred("disabled", true)
+	set_collision_state(false)
 	# despawn animation
 	animation.play_backwards("Spawn")
 	yield(animation, "animation_finished")
 	# free boss instance
-	call_deferred("free")
+	.on_death()

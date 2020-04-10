@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/enemies/Angler.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/LevelBlock.gd" type="Script" id=2]
+
+[node name="LevelBlock" type="Node2D"]
+script = ExtResource( 2 )
+block_id = 6
+can_mirror = true
+base_difficulty = 2.0
+length = 384.0
+
+[node name="Angler" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, 64 )
+
+[node name="Angler2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 672, 192 )
+
+[node name="Angler3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 320 )

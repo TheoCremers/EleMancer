@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/enemies/Pentapus.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://scenes/obstacles/Block.tscn" type="PackedScene" id=3]
+
+[node name="LevelBlock" type="Node2D"]
+script = ExtResource( 2 )
+block_id = 9
+pause_screen = true
+base_difficulty = 3.0
+length = 512.0
+
+[node name="Block" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128, 448 )
+
+[node name="Block3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64, 352 )
+
+[node name="Block2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 576, 448 )
+
+[node name="Block4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640, 352 )
+
+[node name="Pentapus" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 128 )
