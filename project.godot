@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "OwnedItem",
+"language": "GDScript",
+"path": "res://scripts/models/OwnedItem.gd"
+} ]
 _global_script_class_icons={
-
+"OwnedItem": ""
 }
 
 [application]

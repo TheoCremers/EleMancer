@@ -11,22 +11,22 @@ base_difficulty = 2.0
 length = 192.0
 
 [node name="ArrowShell" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64, -192 )
+position = Vector2( 64, -128 )
 
 [node name="ArrowShell2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, -160 )
+position = Vector2( 160, -96 )
 
 [node name="ArrowShell3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 256, -128 )
+position = Vector2( 256, -64 )
 
 [node name="ArrowShell4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 352, -96 )
+position = Vector2( 352, -32 )
 
 [node name="ArrowShell5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 448, -64 )
+position = Vector2( 448, 0 )
 
 [node name="ArrowShell6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 544, -32 )
+position = Vector2( 544, 32 )
 
 [node name="ArrowShell7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 640, 0 )
+position = Vector2( 640, 64 )

@@ -9,7 +9,6 @@ var jump_time = 0.1
 var level
 var target_body
 var target_prev_position
-#var target_list = []
 var targets_remaining = []
 
 var LightningEffect = preload("res://scenes/effects/LightningEffect.tscn")
@@ -21,9 +20,7 @@ func _ready():
 	for target in targets_remaining:
 		target.damageable.connect("death_signal", self, "_on_target_death")
 	# set initial target
-	#target_list.append(target_body)
-	target_prev_position = target_body.global_position
-	if target_body.is_in_group(Group.OnscreenEnemy):
+	if is_instance_valid(target_body):
 		targets_remaining.erase(target_body)
 	
 	jumps_total = 2 * level

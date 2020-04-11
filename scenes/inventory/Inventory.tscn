@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/inventory/InventoryStorage.gd" type="Script" id=1]
+[ext_resource path="res://scripts/inventory/InventoryMain.gd" type="Script" id=2]
+
+[node name="Inventory" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 544.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backpack" type="GridContainer" parent="Panel"]
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 448.0
+margin_bottom = 256.0
+columns = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+number_of_slots = 12
+
+[node name="AttackSlots" type="GridContainer" parent="Panel"]
+margin_left = 160.0
+margin_top = 32.0
+margin_right = 352.0
+margin_bottom = 96.0
+columns = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+type = 1
+number_of_slots = 3

@@ -9,8 +9,9 @@ func init(pos1:Vector2, pos2:Vector2):
 	
 	var timer = Timer.new()
 	timer.connect("timeout", self, "_on_timer_timeout")
+	timer.set_wait_time(0.5)
+	timer.autostart = true
 	add_child(timer)
-	timer.start(0.5)
 
 func _on_timer_timeout():
 	call_deferred('free')

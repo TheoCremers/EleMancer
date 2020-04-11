@@ -12,7 +12,7 @@ base_difficulty = 4.0
 length = 428.0
 
 [node name="Pentapus" parent="." instance=ExtResource( 1 )]
-position = Vector2( 352, 256 )
+position = Vector2( 352, 160 )
 
 [node name="ArrowShell" parent="." instance=ExtResource( 3 )]
 position = Vector2( 608, 288 )

@@ -129,6 +129,7 @@ func add_chain_lightning(level, body):
 		#new_object.position = global_position
 		new_object.level = level
 		new_object.target_body = body
+		new_object.target_prev_position = body.global_position
 		GameManager.abilities.call_deferred("add_child", new_object)
 
 func add_death_grasp(level, body):
