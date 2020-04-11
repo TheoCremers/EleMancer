@@ -1,5 +1,7 @@
 extends Node
 
+const number_of_elements = 6
+
 const element_order = ["earth", "shock", "fire", "ice", "life", "death"]
 
 const element_colors = {
@@ -11,41 +13,47 @@ const element_colors = {
 	"death" : Color( 0.1, 0.1, 0.44, 1 ),
 }
 
-const element_items = {
+const items = {
 	0 : {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/fire1.tres"),
 		"level" : 1,
 		"type" : "fire",
-		"name" : "minor fire"
+		"name" : "minor fire",
+		"buy_price" : 100
 	},
 	1 : {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/ice1.tres"),
 		"level" : 1,
 		"type" : "ice",
-		"name" : "minor ice"
+		"name" : "minor ice",
+		"buy_price" : 100
 	},
 	2 : {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/earth1.tres"),
 		"level" : 1,
 		"type" : "earth",
-		"name" : "minor earth"
+		"name" : "minor earth",
+		"buy_price" : 100
 	},
 	3 : {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/shock1.tres"),
 		"level" : 1,
 		"type" : "shock",
-		"name" : "minor shock"
+		"name" : "minor shock",
+		"buy_price" : 100
 	},
 	4 : {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/life1.tres"),
 		"level" : 1,
 		"type" : "life",
-		"name" : "minor life"
+		"name" : "minor life",
+		"buy_price" : 100
 	},
 	5 : {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/death1.tres"),
 		"level" : 1,
 		"type" : "death",
-		"name" : "minor death"
+		"name" : "minor death",
+		"buy_price" : 100
 	}
 }

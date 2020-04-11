@@ -6,6 +6,7 @@ var in_menu = true
 var player_dead = false
 var current_difficulty = 2.5
 var owned_items = []
+var essence = 300
 
 # contains often used references such as player and movingcamera
 onready var player = $"/root/World/Player"
@@ -32,7 +33,7 @@ func _on_player_death(damageable):
 
 func generate_items():
 	for i in range(0,6):
-		var new_item = OwnedItem.new(i, i, 0)
+		var new_item = OwnedItem.new(i, i)
 		owned_items.append(new_item)
 
 func move_item(oldslot : int, newslot : int):
@@ -57,3 +58,28 @@ func swap_item(first_slot : int, second_slot : int):
 			item.swapped = true
 	for item in owned_items:
 		item.swapped = false
+
+func give_player_item(item_id : int, slot_id : int):
+	var item = OwnedItem.new(item_id, slot_id)
+	owned_items.append(item)
+
+func buy_item(item_id : int, price : int, slot_id : int) -> bool:
+	if essence >= price:
+		give_player_item(item_id, slot_id)
+		essence -= price
+		return true
+	else:
+		return false
+
+func sell_item(price : int, slot_id : int):
+	essence += price
+	for item in owned_items:
+		if item.slot_id == slot_id:
+			owned_items.erase(item)
+
+func buy_with_essence(price : int) -> bool:
+	if essence >= price:
+		essence -= price
+		return true
+	else:
+		return false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/inventory/InventoryStorage.gd" type="Script" id=1]
 [ext_resource path="res://scripts/inventory/InventoryMain.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Avara.tres" type="DynamicFont" id=3]
 
 [node name="Inventory" type="Control"]
 script = ExtResource( 2 )
@@ -10,35 +11,166 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 32.0
-margin_top = 32.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 640.0
+margin_bottom = 416.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryLabel" type="Label" parent="Panel"]
+margin_left = 64.0
+margin_top = 160.0
+margin_right = 384.0
+margin_bottom = 192.0
+custom_fonts/font = ExtResource( 3 )
+text = "Inventory"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EssenceLabel" type="Label" parent="Panel"]
+margin_left = 416.0
+margin_top = 160.0
 margin_right = 544.0
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 3 )
+text = "Essence:
+0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 384.0
 margin_bottom = 320.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Backpack" type="GridContainer" parent="Panel"]
-margin_left = 64.0
-margin_top = 128.0
-margin_right = 448.0
-margin_bottom = 256.0
-columns = 6
+[node name="Backpack" type="GridContainer" parent="Panel/CenterContainer"]
+margin_left = 160.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 64.0
+columns = 5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-number_of_slots = 12
 
-[node name="AttackSlots" type="GridContainer" parent="Panel"]
+[node name="EquippedLabel" type="Label" parent="Panel"]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 384.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Equipped"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="Panel"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 384.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equipped" type="GridContainer" parent="Panel/CenterContainer2"]
 margin_left = 160.0
 margin_top = 32.0
-margin_right = 352.0
-margin_bottom = 96.0
-columns = 3
+margin_right = 160.0
+margin_bottom = 32.0
+columns = 5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-type = 1
+type = "equip"
 number_of_slots = 3
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 64.0
+margin_top = 448.0
+margin_right = 640.0
+margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopLabel" type="Label" parent="Panel2"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 416.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Shop"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel2"]
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 416.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shop" type="GridContainer" parent="Panel2/CenterContainer"]
+margin_left = 192.0
+margin_top = 32.0
+margin_right = 192.0
+margin_bottom = 32.0
+columns = 7
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+type = "shop"
+number_of_slots = 5
+
+[node name="SellLabel" type="Label" parent="Panel2"]
+margin_left = 416.0
+margin_top = 32.0
+margin_right = 544.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Sell"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell" type="GridContainer" parent="Panel2"]
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 512.0
+margin_bottom = 128.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+type = "sell"
+number_of_slots = 1
+
+[node name="RefreshButton" type="Button" parent="Panel2"]
+margin_left = 275.0
+margin_top = 20.0
+margin_right = 420.0
+margin_bottom = 48.0
+text = "Refresh (50 essence)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
