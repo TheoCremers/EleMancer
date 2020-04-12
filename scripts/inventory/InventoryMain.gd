@@ -3,18 +3,22 @@ extends Control
 var refresh_price = 50
 var holding_item = null
 var storage_list = []
+var type_owned = ["inventory", "equip", "combine"]
 
 onready var essence_label = $Panel/EssenceLabel
 
 func _ready():
 	# add all storage lists here
-	storage_list.append(get_node("Panel/CenterContainer/Backpack"))
-	storage_list.append(get_node("Panel/CenterContainer2/Equipped"))
-	storage_list.append(get_node("Panel2/CenterContainer/Shop"))
+	storage_list.append(get_node("Panel/Inventory"))
+	storage_list.append(get_node("Panel/Equipped"))
+	storage_list.append(get_node("Panel/Combine"))
+	storage_list.append(get_node("Panel2/Shop"))
 	storage_list.append(get_node("Panel2/Sell"))
-	# connect refresh button
+	# connect buttons
 	if has_node("Panel2/RefreshButton"):
 		get_node("Panel2/RefreshButton").connect("pressed", self, "refresh_shop")
+	if has_node("Panel/CombineButton"):
+		get_node("Panel/CombineButton").connect("pressed", self, "combine_elements")
 	# show available funds
 	update_essence()
 
@@ -40,33 +44,32 @@ func _process(_delta):
 			else: # you are holding an item
 				var old_slot = holding_item.item_slot
 				var old_slot_type = holding_item.item_slot.type
-				
-				if old_slot == target_slot: # same slot
+				# same slot
+				if old_slot == target_slot:
 					return_item(old_slot)
-				
-				elif (slot_type == "inventory" or slot_type == "equip") and \
-					(old_slot_type == "inventory" or old_slot_type == "equip"): # inside player inventory
+				 # inside player inventory
+				elif (slot_type in type_owned) and (old_slot_type in type_owned):
 					if target_slot.item != null: # swap
 						GameManager.swap_item(holding_item.item_slot.slot_id, target_slot.slot_id)
 						swap_item(target_slot, old_slot)
 					else: # move
 						GameManager.move_item(holding_item.item_slot.slot_id, target_slot.slot_id)
 						move_item(target_slot, old_slot)
-						
-				elif (slot_type == "shop" and old_slot_type == "shop"): # inside shop
+				# inside shop
+				elif (slot_type == "shop" and old_slot_type == "shop"):
 					if target_slot.item != null: # swap
 						swap_item(target_slot, old_slot)
 					else: # move
 						move_item(target_slot, old_slot)
-						
-				elif (slot_type == "inventory" or slot_type == "equip") and old_slot_type == "shop":
+				# from shop to inventory
+				elif (slot_type in type_owned) and old_slot_type == "shop":
 					if target_slot.item == null: # buy an item
 						var price = Constants.items[holding_item.item_id].buy_price
 						if GameManager.buy_item(holding_item.item_id, price, target_slot.slot_id):
 							update_essence()
 							move_item(target_slot, old_slot)
-				
-				elif slot_type == "sell" and (old_slot_type == "inventory" or old_slot_type == "equip"):
+				# sell an item
+				elif slot_type == "sell" and old_slot_type in type_owned:
 					var price = Constants.items[holding_item.item_id].buy_price
 					price = int(price * 0.5)
 					GameManager.sell_item(price, target_slot.slot_id)
@@ -76,7 +79,7 @@ func _process(_delta):
 					else:
 						overwrite_item(target_slot, old_slot)
 				
-				elif (slot_type == "inventory" or slot_type == "equip") and old_slot_type == "sell":
+				elif slot_type in type_owned and old_slot_type == "sell":
 					if target_slot.item == null: # buy back a sold item
 						var price = Constants.items[holding_item.item_id].buy_price
 						price = int(price * 0.5)
@@ -117,3 +120,8 @@ func refresh_shop():
 		for storage in storage_list:
 			if storage.type == "shop":
 				storage.fill_shop()
+
+func combine_elements():
+	for storage in storage_list:
+		if storage.type == "combine":
+			var combined = storage.try_combine()

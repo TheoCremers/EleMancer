@@ -18,6 +18,7 @@ const items = {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/fire1.tres"),
 		"level" : 1,
 		"type" : "fire",
+		"triple" : 1,
 		"name" : "minor fire",
 		"buy_price" : 100
 	},
@@ -25,6 +26,7 @@ const items = {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/ice1.tres"),
 		"level" : 1,
 		"type" : "ice",
+		"triple" : 2,
 		"name" : "minor ice",
 		"buy_price" : 100
 	},
@@ -32,6 +34,7 @@ const items = {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/earth1.tres"),
 		"level" : 1,
 		"type" : "earth",
+		"triple" : 3,
 		"name" : "minor earth",
 		"buy_price" : 100
 	},
@@ -39,6 +42,7 @@ const items = {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/shock1.tres"),
 		"level" : 1,
 		"type" : "shock",
+		"triple" : 4,
 		"name" : "minor shock",
 		"buy_price" : 100
 	},
@@ -46,6 +50,7 @@ const items = {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/life1.tres"),
 		"level" : 1,
 		"type" : "life",
+		"triple" : 5,
 		"name" : "minor life",
 		"buy_price" : 100
 	},
@@ -53,7 +58,15 @@ const items = {
 		"icon" : preload("res://assets/icons/ele_icons1.sprites/death1.tres"),
 		"level" : 1,
 		"type" : "death",
+		"triple" : 0,
 		"name" : "minor death",
 		"buy_price" : 100
 	}
 }
+
+const special_combinations = [
+	{
+		"items" : [0, 2, 4],
+		"result" : 5
+	}
+]

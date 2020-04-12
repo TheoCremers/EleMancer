@@ -36,25 +36,25 @@ func generate_items():
 		var new_item = OwnedItem.new(i, i)
 		owned_items.append(new_item)
 
-func move_item(oldslot : int, newslot : int):
+func move_item(old_slot_id : int, new_slot_id : int):
 	for item in owned_items:
-		if item.slot_id == oldslot:
-			item.slot_id = newslot
+		if item.slot_id == old_slot_id:
+			item.slot_id = new_slot_id
 			return
 
-func remove_item(slot : int):
+func remove_item(slot_id : int):
 	for item in owned_items:
-		if item.slot_id == slot:
+		if item.slot_id == slot_id:
 			owned_items.erase(item)
 			return
 
-func swap_item(first_slot : int, second_slot : int):
+func swap_item(first_slot_id : int, second_slot_id : int):
 	for item in owned_items:
-		if item.slot_id == first_slot and item.swapped == false:
-			item.slot_id = second_slot
+		if item.slot_id == first_slot_id and item.swapped == false:
+			item.slot_id = second_slot_id
 			item.swapped = true
-		if item.slot_id == second_slot and item.swapped == false:
-			item.slot_id = first_slot
+		if item.slot_id == second_slot_id and item.swapped == false:
+			item.slot_id = first_slot_id
 			item.swapped = true
 	for item in owned_items:
 		item.swapped = false

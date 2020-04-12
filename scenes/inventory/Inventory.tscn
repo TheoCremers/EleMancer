@@ -20,9 +20,9 @@ __meta__ = {
 }
 
 [node name="InventoryLabel" type="Label" parent="Panel"]
-margin_left = 64.0
+margin_left = 32.0
 margin_top = 160.0
-margin_right = 384.0
+margin_right = 352.0
 margin_bottom = 192.0
 custom_fonts/font = ExtResource( 3 )
 text = "Inventory"
@@ -32,9 +32,9 @@ __meta__ = {
 }
 
 [node name="EssenceLabel" type="Label" parent="Panel"]
-margin_left = 416.0
+margin_left = 384.0
 margin_top = 160.0
-margin_right = 544.0
+margin_right = 512.0
 margin_bottom = 224.0
 custom_fonts/font = ExtResource( 3 )
 text = "Essence:
@@ -44,20 +44,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel"]
-margin_left = 64.0
+[node name="Inventory" type="GridContainer" parent="Panel"]
+margin_left = 32.0
 margin_top = 192.0
-margin_right = 384.0
+margin_right = 352.0
 margin_bottom = 320.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Backpack" type="GridContainer" parent="Panel/CenterContainer"]
-margin_left = 160.0
-margin_top = 64.0
-margin_right = 160.0
-margin_bottom = 64.0
 columns = 5
 script = ExtResource( 1 )
 __meta__ = {
@@ -65,9 +56,9 @@ __meta__ = {
 }
 
 [node name="EquippedLabel" type="Label" parent="Panel"]
-margin_left = 64.0
+margin_left = 96.0
 margin_top = 32.0
-margin_right = 384.0
+margin_right = 288.0
 margin_bottom = 64.0
 custom_fonts/font = ExtResource( 3 )
 text = "Equipped"
@@ -76,20 +67,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer2" type="CenterContainer" parent="Panel"]
-margin_left = 64.0
+[node name="Equipped" type="GridContainer" parent="Panel"]
+margin_left = 96.0
 margin_top = 64.0
-margin_right = 384.0
+margin_right = 288.0
 margin_bottom = 128.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Equipped" type="GridContainer" parent="Panel/CenterContainer2"]
-margin_left = 160.0
-margin_top = 32.0
-margin_right = 160.0
-margin_bottom = 32.0
 columns = 5
 script = ExtResource( 1 )
 __meta__ = {
@@ -97,6 +79,29 @@ __meta__ = {
 }
 type = "equip"
 number_of_slots = 3
+
+[node name="Combine" type="GridContainer" parent="Panel"]
+margin_left = 352.0
+margin_top = 64.0
+margin_right = 544.0
+margin_bottom = 128.0
+columns = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+type = "combine"
+number_of_slots = 3
+
+[node name="CombineButton" type="Button" parent="Panel"]
+margin_left = 384.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 60.0
+text = "Combine!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel2" type="Panel" parent="."]
 margin_left = 64.0
@@ -110,7 +115,7 @@ __meta__ = {
 [node name="ShopLabel" type="Label" parent="Panel2"]
 margin_left = 32.0
 margin_top = 32.0
-margin_right = 416.0
+margin_right = 352.0
 margin_bottom = 64.0
 custom_fonts/font = ExtResource( 3 )
 text = "Shop"
@@ -119,20 +124,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel2"]
+[node name="Shop" type="GridContainer" parent="Panel2"]
 margin_left = 32.0
 margin_top = 64.0
-margin_right = 416.0
+margin_right = 352.0
 margin_bottom = 128.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Shop" type="GridContainer" parent="Panel2/CenterContainer"]
-margin_left = 192.0
-margin_top = 32.0
-margin_right = 192.0
-margin_bottom = 32.0
 columns = 7
 script = ExtResource( 1 )
 __meta__ = {
@@ -142,9 +138,9 @@ type = "shop"
 number_of_slots = 5
 
 [node name="SellLabel" type="Label" parent="Panel2"]
-margin_left = 416.0
+margin_left = 384.0
 margin_top = 32.0
-margin_right = 544.0
+margin_right = 512.0
 margin_bottom = 64.0
 custom_fonts/font = ExtResource( 3 )
 text = "Sell"
@@ -154,9 +150,9 @@ __meta__ = {
 }
 
 [node name="Sell" type="GridContainer" parent="Panel2"]
-margin_left = 448.0
+margin_left = 416.0
 margin_top = 64.0
-margin_right = 512.0
+margin_right = 480.0
 margin_bottom = 128.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -166,10 +162,10 @@ type = "sell"
 number_of_slots = 1
 
 [node name="RefreshButton" type="Button" parent="Panel2"]
-margin_left = 275.0
-margin_top = 20.0
-margin_right = 420.0
-margin_bottom = 48.0
+margin_left = 241.0
+margin_top = 32.0
+margin_right = 401.0
+margin_bottom = 60.0
 text = "Refresh (50 essence)"
 __meta__ = {
 "_edit_use_anchors_": false
