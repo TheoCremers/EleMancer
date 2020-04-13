@@ -15,52 +15,148 @@ const element_colors = {
 
 const items = {
 	0 : {
-		"icon" : preload("res://assets/icons/ele_icons1.sprites/fire1.tres"),
+		"icon" : preload("res://assets/icons/element_icons.sprites/fire/fire1.tres"),
 		"level" : 1,
 		"type" : "fire",
-		"triple" : 1,
-		"name" : "minor fire",
+		"triple" : 10,
+		"name" : "lesser fire",
 		"buy_price" : 100
 	},
 	1 : {
-		"icon" : preload("res://assets/icons/ele_icons1.sprites/ice1.tres"),
+		"icon" : preload("res://assets/icons/element_icons.sprites/ice/ice1.tres"),
 		"level" : 1,
 		"type" : "ice",
-		"triple" : 2,
-		"name" : "minor ice",
+		"triple" : 11,
+		"name" : "lesser ice",
 		"buy_price" : 100
 	},
 	2 : {
-		"icon" : preload("res://assets/icons/ele_icons1.sprites/earth1.tres"),
+		"icon" : preload("res://assets/icons/element_icons.sprites/earth/earth1.tres"),
 		"level" : 1,
 		"type" : "earth",
-		"triple" : 3,
-		"name" : "minor earth",
+		"triple" : 12,
+		"name" : "lesser earth",
 		"buy_price" : 100
 	},
 	3 : {
-		"icon" : preload("res://assets/icons/ele_icons1.sprites/shock1.tres"),
+		"icon" : preload("res://assets/icons/element_icons.sprites/shock/shock1.tres"),
 		"level" : 1,
 		"type" : "shock",
-		"triple" : 4,
-		"name" : "minor shock",
+		"triple" : 13,
+		"name" : "lesser shock",
 		"buy_price" : 100
 	},
 	4 : {
-		"icon" : preload("res://assets/icons/ele_icons1.sprites/life1.tres"),
+		"icon" : preload("res://assets/icons/element_icons.sprites/life/life1.tres"),
 		"level" : 1,
 		"type" : "life",
-		"triple" : 5,
-		"name" : "minor life",
+		"triple" : 14,
+		"name" : "lesser life",
 		"buy_price" : 100
 	},
 	5 : {
-		"icon" : preload("res://assets/icons/ele_icons1.sprites/death1.tres"),
+		"icon" : preload("res://assets/icons/element_icons.sprites/death/death1.tres"),
 		"level" : 1,
-		"type" : "death",
-		"triple" : 0,
+		"type" : "lesser death",
+		"triple" : 15,
 		"name" : "minor death",
 		"buy_price" : 100
+	},
+	10 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/fire/fire2.tres"),
+		"level" : 2,
+		"type" : "fire",
+		"triple" : 20,
+		"name" : "refined fire",
+		"buy_price" : 200
+	},
+	11 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/ice/ice2.tres"),
+		"level" : 2,
+		"type" : "ice",
+		"triple" : 21,
+		"name" : "refined ice",
+		"buy_price" : 200
+	},
+	12 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/earth/earth2.tres"),
+		"level" : 2,
+		"type" : "earth",
+		"triple" : 22,
+		"name" : "refined earth",
+		"buy_price" : 200
+	},
+	13 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/shock/shock2.tres"),
+		"level" : 2,
+		"type" : "shock",
+		"triple" : 23,
+		"name" : "refined shock",
+		"buy_price" : 200
+	},
+	14 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/life/life2.tres"),
+		"level" : 2,
+		"type" : "life",
+		"triple" : 24,
+		"name" : "refined life",
+		"buy_price" : 200
+	},
+	15 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/death/death2.tres"),
+		"level" : 2,
+		"type" : "death",
+		"triple" : 25,
+		"name" : "refined death",
+		"buy_price" : 200
+	},
+	20 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/fire/fire3.tres"),
+		"level" : 3,
+		"type" : "fire",
+		"triple" : -1,
+		"name" : "pure fire",
+		"buy_price" : 400
+	},
+	21 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/ice/ice3.tres"),
+		"level" : 3,
+		"type" : "ice",
+		"triple" : -1,
+		"name" : "pure ice",
+		"buy_price" : 400
+	},
+	22 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/earth/earth3.tres"),
+		"level" : 3,
+		"type" : "earth",
+		"triple" : -1,
+		"name" : "pure earth",
+		"buy_price" : 400
+	},
+	23 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/shock/shock3.tres"),
+		"level" : 3,
+		"type" : "shock",
+		"triple" : -1,
+		"name" : "pure shock",
+		"buy_price" : 400
+	},
+	24 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/life/life3.tres"),
+		"level" : 3,
+		"type" : "life",
+		"triple" : -1,
+		"name" : "pure life",
+		"buy_price" : 400
+	},
+	25 : {
+		"icon" : preload("res://assets/icons/element_icons.sprites/death/death3.tres"),
+		"level" : 3,
+		"type" : "death",
+		"triple" : -1,
+		"name" : "pure death",
+		"buy_price" : 400
 	}
 }
 

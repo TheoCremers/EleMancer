@@ -6,7 +6,7 @@ var in_menu = true
 var player_dead = false
 var current_difficulty = 2.5
 var owned_items = []
-var essence = 300
+var essence = 300000
 
 # contains often used references such as player and movingcamera
 onready var player = $"/root/World/Player"

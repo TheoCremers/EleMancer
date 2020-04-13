@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/element_icons.tpsheet-a3731de87d8f5218f465b87d77eab34b.res"
+
+[deps]
+
+files=[ "res://assets/icons/element_icons.sprites/fire/fire3.tres", "res://assets/icons/element_icons.sprites/death/death3.tres", "res://assets/icons/element_icons.sprites/shock/shock3.tres", "res://assets/icons/element_icons.sprites/life/life2.tres", "res://assets/icons/element_icons.sprites/life/life3.tres", "res://assets/icons/element_icons.sprites/ice/ice3.tres", "res://assets/icons/element_icons.sprites/death/death2.tres", "res://assets/icons/element_icons.sprites/earth/earth3.tres", "res://assets/icons/element_icons.sprites/shock/shock2.tres", "res://assets/icons/element_icons.sprites/death/death1.tres", "res://assets/icons/element_icons.sprites/earth/earth2.tres", "res://assets/icons/element_icons.sprites/fire/fire2.tres", "res://assets/icons/element_icons.sprites/fire/fire1.tres", "res://assets/icons/element_icons.sprites/ice/ice2.tres", "res://assets/icons/element_icons.sprites/shock/shock1.tres", "res://assets/icons/element_icons.sprites/ice/ice1.tres", "res://assets/icons/element_icons.sprites/earth/earth1.tres", "res://assets/icons/element_icons.sprites/life/life1.tres" ]
+
+source_file="res://assets/icons/element_icons.tpsheet"
+dest_files=[ "res://.import/element_icons.tpsheet-a3731de87d8f5218f465b87d77eab34b.res", "res://assets/icons/element_icons.sprites/fire/fire3.tres", "res://assets/icons/element_icons.sprites/death/death3.tres", "res://assets/icons/element_icons.sprites/shock/shock3.tres", "res://assets/icons/element_icons.sprites/life/life2.tres", "res://assets/icons/element_icons.sprites/life/life3.tres", "res://assets/icons/element_icons.sprites/ice/ice3.tres", "res://assets/icons/element_icons.sprites/death/death2.tres", "res://assets/icons/element_icons.sprites/earth/earth3.tres", "res://assets/icons/element_icons.sprites/shock/shock2.tres", "res://assets/icons/element_icons.sprites/death/death1.tres", "res://assets/icons/element_icons.sprites/earth/earth2.tres", "res://assets/icons/element_icons.sprites/fire/fire2.tres", "res://assets/icons/element_icons.sprites/fire/fire1.tres", "res://assets/icons/element_icons.sprites/ice/ice2.tres", "res://assets/icons/element_icons.sprites/shock/shock1.tres", "res://assets/icons/element_icons.sprites/ice/ice1.tres", "res://assets/icons/element_icons.sprites/earth/earth1.tres", "res://assets/icons/element_icons.sprites/life/life1.tres" ]
+
+[params]
+

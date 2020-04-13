@@ -31,19 +31,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EssenceLabel" type="Label" parent="Panel"]
-margin_left = 384.0
-margin_top = 160.0
-margin_right = 512.0
-margin_bottom = 224.0
-custom_fonts/font = ExtResource( 3 )
-text = "Essence:
-0"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Inventory" type="GridContainer" parent="Panel"]
 margin_left = 32.0
 margin_top = 192.0
@@ -80,6 +67,16 @@ __meta__ = {
 type = "equip"
 number_of_slots = 3
 
+[node name="CombineButton" type="Button" parent="Panel"]
+margin_left = 384.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 60.0
+text = "Combine!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Combine" type="GridContainer" parent="Panel"]
 margin_left = 352.0
 margin_top = 64.0
@@ -93,12 +90,15 @@ __meta__ = {
 type = "combine"
 number_of_slots = 3
 
-[node name="CombineButton" type="Button" parent="Panel"]
+[node name="EssenceLabel" type="Label" parent="Panel"]
 margin_left = 384.0
-margin_top = 32.0
+margin_top = 160.0
 margin_right = 512.0
-margin_bottom = 60.0
-text = "Combine!"
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 3 )
+text = "Essence:
+0"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
