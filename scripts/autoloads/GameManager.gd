@@ -2,22 +2,23 @@ extends Node
 
 var OwnedItem = preload("res://scripts/models/OwnedItem.gd")
 
-var in_menu = true
 var player_dead = false
 var current_difficulty = 2.5
 var owned_items = []
-var essence = 300000
+var essence = 5000
 
 # contains often used references such as player and movingcamera
-onready var player = $"/root/World/Player"
-onready var abilities = $"/root/World/Abilities"
-onready var projectiles = $"/root/World/Projectiles"
-onready var camera = $"/root/World/MovingCamera"
+onready var player = $"/root/Game/World/Player"
+onready var abilities = $"/root/Game/World/Abilities"
+onready var projectiles = $"/root/Game/World/Projectiles"
+onready var camera = $"/root/Game/World/MovingCamera"
+onready var world = $"/root/Game/World"
+onready var inventory = $"/root/Game/UI/Inventory"
 
 func _ready():
 	generate_items()
-	if not in_menu:
-		connect_player()
+	connect_player()
+	open_inventory()
 
 func connect_player():
 	player.damageable.connect("death_signal", self, "_on_player_death")
@@ -32,9 +33,9 @@ func _on_player_death(damageable):
 
 
 func generate_items():
-	for i in range(0,6):
-		var new_item = OwnedItem.new(i, i)
-		owned_items.append(new_item)
+	#owned_items.append(OwnedItem.new(10, 0 + 100))
+	#owned_items.append(OwnedItem.new(11, 1 + 100))
+	owned_items.append(OwnedItem.new(10, 2 + 100))
 
 func move_item(old_slot_id : int, new_slot_id : int):
 	for item in owned_items:
@@ -83,3 +84,12 @@ func buy_with_essence(price : int) -> bool:
 		return true
 	else:
 		return false
+
+func open_inventory():
+	get_tree().paused = true
+	inventory.visible = true
+
+func close_inventory():
+	inventory.visible = false
+	get_tree().paused = false
+	player.update_projectile()

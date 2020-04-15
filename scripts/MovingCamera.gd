@@ -2,7 +2,7 @@ extends Camera2D
 
 export(float) var movespeed = 0
 var border_width = 20
-
+var viewport_size
 onready var border_bottom = $BorderBottom/CollisionShape2D
 onready var border_top = $BorderTop/CollisionShape2D
 onready var border_left = $BorderLeft/CollisionShape2D
@@ -10,7 +10,7 @@ onready var border_right = $BorderRight/CollisionShape2D
 onready var screen = $Screen/CollisionShape2D
 
 func _ready():
-	var viewport_size = get_viewport().size
+	viewport_size = get_viewport().size
 	screen.shape.set_extents(viewport_size * 0.5)
 	border_bottom.shape.set_extents(Vector2(viewport_size.x * 0.5, border_width))
 	border_bottom.get_parent().position = Vector2(0, viewport_size.y * 0.5)
@@ -28,6 +28,8 @@ func _process(delta):
 		GameManager.player.move_and_slide(Vector2.UP * movespeed)
 		position.y -= movespeed * delta
 
+func get_bottom_y_pos():
+	return position.y + viewport_size.y * 0.5
 
 func _on_Screen_area_exited(area):
 	if area.has_method("on_exit_screen"):
@@ -47,4 +49,3 @@ func _on_Screen_body_exited(body):
 	else:
 		yield(get_tree().create_timer(1.0), "timeout")
 		body.call_deferred("free")
-

@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/menu.tpsheet-96c965f9c798d77a4429a2b52d63e325.res"
+
+[deps]
+
+files=[ "res://assets/symbols/menu.sprites/close1.tres", "res://assets/symbols/menu.sprites/close2.tres" ]
+
+source_file="res://assets/symbols/menu.tpsheet"
+dest_files=[ "res://.import/menu.tpsheet-96c965f9c798d77a4429a2b52d63e325.res", "res://assets/symbols/menu.sprites/close1.tres", "res://assets/symbols/menu.sprites/close2.tres" ]
+
+[params]
+

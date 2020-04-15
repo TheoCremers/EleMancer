@@ -3,8 +3,10 @@ extends Node2D
 var skulls = []
 var level = 1
 var stacks = 0
-var stacks_max = 3
+var stacks_max = 6
+var stack_duration = 3.0
 var damage_per_tick = 1
+var damage_interval = 0.2
 var timer_damage
 var timer_duration
 var default_spacing = Vector2(15, 15)
@@ -24,21 +26,21 @@ func _ready():
 	# make a timer for damage ticks
 	timer_damage = Timer.new()
 	timer_damage.one_shot = false
-	timer_damage.set_wait_time(0.2)
+	timer_damage.set_wait_time(damage_interval)
 	timer_damage.connect("timeout", self, "_on_damage_timer")
 	add_child(timer_damage)
 	
 	# make a timer for duration of debuff
 	timer_duration = Timer.new()
-	timer_duration.one_shot = true
-	timer_duration.set_wait_time(3)
+	timer_duration.one_shot = false
+	timer_duration.set_wait_time(stack_duration)
 	timer_duration.connect("timeout", self, "_on_duration_timer")
 	add_child(timer_duration)
 	
 	# set tick damage and max stacks
 	damage_per_tick = level * 1
-	stacks_max = 2 + level
-	if stacks_max > 6: stacks_max = 6
+	#stacks_max = 2 + level
+	#if stacks_max > 6: stacks_max = 6
 	
 	# start with stacks
 	add_stacks(1)
@@ -47,8 +49,8 @@ func check_level(level):
 	if self.level < level:
 		self.level = level
 		damage_per_tick = level * 1
-		stacks_max = 2 + level
-		if stacks_max > 6: stacks_max = 6
+		#stacks_max = 2 + level
+		#if stacks_max > 6: stacks_max = 6
 
 func add_stacks(amount):
 	# start damage timer if previously no stacks
@@ -104,8 +106,10 @@ func _on_death(damageable):
 	call_deferred("free")
 
 func _on_duration_timer():
-	stacks = 0
-	timer_damage.stop()
+	stacks -= 1
+	if stacks <= 0:
+		timer_damage.stop()
+		timer_duration.stop()
 	show_skulls()
 
 

@@ -4,6 +4,7 @@ var refresh_price = 50
 var holding_item = null
 var storage_list = []
 var type_owned = ["inventory", "equip", "combine"]
+var equipped_elements = []
 
 onready var essence_label = $Panel/EssenceLabel
 
@@ -15,10 +16,9 @@ func _ready():
 	storage_list.append(get_node("Panel2/Shop"))
 	storage_list.append(get_node("Panel2/Sell"))
 	# connect buttons
-	if has_node("Panel2/RefreshButton"):
-		get_node("Panel2/RefreshButton").connect("pressed", self, "refresh_shop")
-	if has_node("Panel/CombineButton"):
-		get_node("Panel/CombineButton").connect("pressed", self, "combine_elements")
+	get_node("Panel2/RefreshButton").connect("pressed", self, "refresh_shop")
+	get_node("Panel/CombineButton").connect("pressed", self, "combine_elements")
+	get_node("Panel/CloseButton").connect("pressed", self, "close_inventory")
 	# show available funds
 	update_essence()
 
@@ -125,3 +125,11 @@ func combine_elements():
 	for storage in storage_list:
 		if storage.type == "combine":
 			var combined = storage.try_combine()
+
+func close_inventory():
+	# pass the current equiped elements
+	for storage in storage_list:
+		if storage.type == "equip":
+			equipped_elements = storage.get_elements()
+	# close inventory, continue game
+	GameManager.close_inventory()

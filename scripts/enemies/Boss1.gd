@@ -4,8 +4,6 @@ var projectile1 = preload("res://scenes/enemies/projectiles/BossProjectile1.tscn
 var projectile2 = preload("res://scenes/enemies/projectiles/Boss1Attack2.tscn")
 var projectile3 = preload("res://scenes/enemies/projectiles/Boss1Laser.tscn")
 
-onready var hitbox = $CollisionShape2D
-onready var AOEbox = $"AOE/CollisionShape2D"
 onready var cast_point = $CastPoint.global_position
 onready var animation = $AnimationPlayer
 onready var tween = $Tween
@@ -72,18 +70,17 @@ func attack2():
 		GameManager.projectiles.add_child(new_projectile)
 
 func attack3():
-	if not GameManager.player_dead:
-		var direction = Vector2.UP
-		while not in_phase_transition:
-			# skip desired number of frames
-			for j in range(0, attack3_interval_frames):
-				yield(get_tree(),"idle_frame")
-			var new_projectile = projectile1.instance()
-			new_projectile.position = cast_point
-			direction = direction.rotated(attack3_spacing)
-			new_projectile.direction = direction
-			new_projectile.max_speed = 250
-			GameManager.projectiles.add_child(new_projectile)
+	var direction = Vector2.UP
+	while not in_phase_transition and not GameManager.player_dead:
+		# skip desired number of frames
+		for j in range(0, attack3_interval_frames):
+			yield(get_tree(),"idle_frame")
+		var new_projectile = projectile1.instance()
+		new_projectile.position = cast_point
+		direction = direction.rotated(attack3_spacing)
+		new_projectile.direction = direction
+		new_projectile.max_speed = 250
+		GameManager.projectiles.add_child(new_projectile)
 
 func attack4():
 	if not GameManager.player_dead:
@@ -172,7 +169,8 @@ func on_real_death():
 	# stop laser attack
 	attack_timer_main.disconnect("timeout", self, "attack4")
 	attack_timer_main.stop()
-	attack4_instance.call_deferred("free")
+	if is_instance_valid(attack4_instance):
+		attack4_instance.call_deferred("free")
 	# disable hitboxes
 	set_collision_state(false)
 	# despawn animation

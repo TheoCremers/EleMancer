@@ -2,7 +2,7 @@ extends Node2D
 
 signal death_signal(damageable)
 
-onready var UI = $"/root/World/UI"
+onready var UI = $"/root/Game/UI"
 
 const damage_number = preload("res://scenes/effects/DamageNumber.tscn")
 

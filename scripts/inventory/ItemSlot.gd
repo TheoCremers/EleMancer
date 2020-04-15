@@ -50,7 +50,7 @@ func pick_item():
 	item.pick_item()
 	remove_child(item)
 	#$"/root/World/UI/Inventory".add_child(item)
-	$"/root/Inventory".add_child(item) # testing purposes
+	$"/root/Game/UI/Inventory".add_child(item) # testing purposes
 	item = null
 
 func put_item(new_item):

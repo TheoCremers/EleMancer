@@ -49,9 +49,11 @@ func set_nearest_target():
 		fade_out()
 
 func accel_target_direction():
-	# TODO fix homing when target is gone
-	var acceleration = (homing_target.global_position - global_position).normalized() * homing_accel
-	velocity = (velocity + acceleration).clamped(max_speed)
+	if is_instance_valid(homing_target): # TODO make this more efficient
+		var acceleration = (homing_target.global_position - global_position).normalized() * homing_accel
+		velocity = (velocity + acceleration).clamped(max_speed)
+	else:
+		lose_homing_target(null)
 
 func _on_Area2D_body_entered(body):
 	# something was hit, check if it can be damaged
@@ -71,9 +73,8 @@ func lose_homing_target(damageable):
 
 func fade_out():
 	$CollisionShape2D.call_deferred("disabled", true)
-	$Tween.interpolate_property(self, "modulate:a", 1.0, 0.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-	$Tween.connect("tween_all_completed", self, "_on_fade_out_complete")
-	$Tween.start()
-
-func _on_fade_out_complete():
+	var tween = $Tween
+	tween.interpolate_property(self, "modulate:a", 1.0, 0.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	tween.start()
+	yield(tween, "tween_all_completed")
 	call_deferred("free")

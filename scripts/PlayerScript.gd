@@ -10,16 +10,16 @@ var damageable = preload("res://scripts/Damageable.gd").new()
 var projectile = preload("res://scenes/PlayerProjectile.tscn")
 var projectile_constructor = preload("res://scripts/projectiles/ConstructProjectile.gd").new()
 
-onready var debug_info = $"/root/World/UI/DebugInfo"
+onready var attack_timer = $"AttackTimer"
+onready var debug_info = $"/root/Game/UI/DebugInfo"
 
 func _ready():
 	add_child(damageable)
 	damageable.health = 100
 	crushed = false
 	
-	$AttackTimer.set_wait_time(attack_cd_time)
+	attack_timer.set_wait_time(attack_cd_time)
 	
-	projectile_constructor.construct()
 
 func _physics_process(delta):
 	# movement
@@ -29,7 +29,7 @@ func _physics_process(delta):
 	
 	# shooting
 	var shoot = Input.is_action_pressed("shoot")
-	if shoot and $AttackTimer.is_stopped():
+	if shoot and attack_timer.is_stopped():
 		basic_attack()
 	
 	debug_report()
@@ -46,12 +46,16 @@ func basic_attack():
 		new_projectile.init(projectile_property)
 		new_projectile.position = global_position
 		GameManager.projectiles.add_child(new_projectile)
-		$AttackTimer.start()
+		attack_timer.start()
 
 
 func _on_inner_body_entered(body):
 	# triggers when player inner body overlaps with obstacle (signal from InnerBody node)
 	crushed = true
+
+func update_projectile():
+	projectile_constructor.elements = GameManager.inventory.equipped_elements
+	projectile_constructor.construct()
 
 
 func debug_report():

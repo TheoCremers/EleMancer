@@ -57,9 +57,9 @@ const items = {
 	5 : {
 		"icon" : preload("res://assets/icons/element_icons.sprites/death/death1.tres"),
 		"level" : 1,
-		"type" : "lesser death",
+		"type" : "death",
 		"triple" : 15,
-		"name" : "minor death",
+		"name" : "lesser death",
 		"buy_price" : 100
 	},
 	10 : {

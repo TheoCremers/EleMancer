@@ -14,6 +14,8 @@ extents = Vector2( 512, 300 )
 [node name="MovingCamera" type="Camera2D"]
 position = Vector2( 513, 301 )
 current = true
+limit_smoothed = true
+smoothing_enabled = true
 editor_draw_screen = false
 script = ExtResource( 1 )
 

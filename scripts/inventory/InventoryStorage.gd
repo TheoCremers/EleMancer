@@ -3,8 +3,6 @@ extends GridContainer
 const ItemClass = preload("res://scripts/inventory/Item.gd");
 const ItemSlotClass = preload("res://scenes/inventory/ItemSlot.tscn")
 
-onready var memberpanel = $"/root/World/UI/PartyMemberPanel/Panel/Equipment";
-
 export(String, "inventory", "equip", "shop", "sell", "combine") var type = "inventory"
 export(int, 0, 30, 1) var number_of_slots = 10
 var target_slot = null
@@ -101,3 +99,11 @@ func _mouse_enter_slot(slot):
 func _mouse_exit_slot(slot):
 	if target_slot == slot:
 		target_slot = null
+
+func get_elements():
+	var elements = []
+	for slot in get_children():
+		if slot.item != null:
+			var item = Constants.items[slot.item.item_id]
+			elements.append({"type" : item.type, "level" : item.level})
+	return elements

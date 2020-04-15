@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="EleMancer"
-run/main_scene="res://scenes/World.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -33,7 +33,7 @@ AssetManager="*res://scripts/autoloads/AssetManager.gd"
 
 [display]
 
-window/size/width=704
+window/size/width=768
 window/size/height=896
 window/size/resizable=false
 window/handheld/orientation="portrait"
