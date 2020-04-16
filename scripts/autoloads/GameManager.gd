@@ -33,9 +33,9 @@ func _on_player_death(damageable):
 
 
 func generate_items():
-	#owned_items.append(OwnedItem.new(10, 0 + 100))
-	#owned_items.append(OwnedItem.new(11, 1 + 100))
-	owned_items.append(OwnedItem.new(10, 2 + 100))
+	owned_items.append(OwnedItem.new(10, 0 + 100))
+	owned_items.append(OwnedItem.new(11, 1 + 100))
+	owned_items.append(OwnedItem.new(12, 2 + 100))
 
 func move_item(old_slot_id : int, new_slot_id : int):
 	for item in owned_items:

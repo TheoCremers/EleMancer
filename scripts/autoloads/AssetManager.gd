@@ -3,7 +3,7 @@ extends Node
 var level_blocks = []
 
 func _ready():
-	var path = "res://scenes/level_blocks"
+	var path = "res://scenes/smevel_blocks"
 	var dir = Directory.new()
 	dir.open(path)
 	dir.list_dir_begin()
