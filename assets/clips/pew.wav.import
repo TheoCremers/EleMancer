@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pew.wav-49e702fc1cc601b825202d78f43d364c.sample"
+
+[deps]
+
+source_file="res://assets/clips/pew.wav"
+dest_files=[ "res://.import/pew.wav-49e702fc1cc601b825202d78f43d364c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

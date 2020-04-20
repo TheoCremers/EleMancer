@@ -37,9 +37,15 @@ func expand(new_top : int):
 	add_required_gradients(new_top)
 	# add required amount of tiles
 	var amount = top_cell - new_top
+	var cell_id = 1
 	for i in range(0, width):
 		for j in range(0, amount):
-			set_cell(i - 1, top_cell - 1 - j, 1)
+			# add some variants in the grass
+			if rng.randi() % 20 == 0:
+				cell_id = rng.randi() % 4 + 4
+			else:
+				cell_id = 1
+			set_cell(i - 1, top_cell - 1 - j, cell_id)
 	
 	var st = Vector2.ZERO
 	var st2 = Vector2.ZERO

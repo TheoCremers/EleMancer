@@ -29,6 +29,15 @@ func _on_Area2D_body_entered(body):
 	# something was hit, check if it can be damaged
 	if "damageable" in body:
 		body.damageable.take_bulk_damage(damage_list)
+		# play sound
+		var sound = AudioStreamPlayer.new()
+		if body.damageable.organic:
+			sound.stream = load("res://assets/clips/squish.wav")
+		else:
+			sound.stream = load("res://assets/clips/impact.wav")
+		add_child(sound)
+		sound.play()
+		# check piercing property
 		if piercing > 0:
 			piercing -= 1
 		else:

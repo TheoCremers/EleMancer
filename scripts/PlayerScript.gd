@@ -5,6 +5,7 @@ var motion = Vector2()
 var crushed = false
 
 var attack_cd_time = 0.5
+var rng = RandomNumberGenerator.new()
 
 var damageable = preload("res://scripts/Damageable.gd").new()
 var projectile = preload("res://scenes/PlayerProjectile.tscn")
@@ -12,6 +13,7 @@ var projectile_constructor = preload("res://scripts/projectiles/ConstructProject
 
 onready var attack_timer = $"AttackTimer"
 onready var debug_info = $"/root/Game/UI/DebugInfo"
+onready var attack_sfx = $AudioStreamPlayer
 
 func _ready():
 	add_child(damageable)
@@ -47,6 +49,9 @@ func basic_attack():
 		new_projectile.position = global_position
 		GameManager.projectiles.add_child(new_projectile)
 		attack_timer.start()
+	# make a sound
+	attack_sfx.set_pitch_scale(rng.randf_range(0.8, 1.2))
+	attack_sfx.play()
 
 
 func _on_inner_body_entered(body):
